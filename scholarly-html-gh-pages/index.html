@@ -95,24 +95,33 @@
     <section id="ontology">
         <h2>Ontology</h2>
         <p>
-            The choice of the ontology language to utilize in a particular situation must be made before beginning to create an ontology-based system. For our project, we have used the <u>Ontology Web Language</u> (OWL) format mainly because our data for creating the ontology was acquired through <a href="https://doacc.github.io/">DOACC</a> project and these files came in the above mentioned extension. The tool used to create the ontology was <a href="https://protege.stanford.edu/">Protege</a>, a free, open-source ontology editor.
+            The choice of the ontology language to utilize in a particular situation must be made before beginning to create an ontology-based system. For our project, we have used the <u>Ontology Web Language</u> (OWL) format for modeling our data, which was acquired through the <a href="https://doacc.github.io/">DOACC</a> project and these files came in the above mentioned extension. The tool used to display the ontologies and extract some metrics and previews was <a href="https://protege.stanford.edu/">Protege</a>, a free, open-source ontology editor.
         </p>
-        <section id="model">
-            <h3>
-                Model
-            </h3>
+        <p>            
+            In order to be as accurate as possible, we used two ontologies, CCY (cryptocurrency) and DOACC (description of a cryptocurrency), and the dataset that we gathered was converted through a custom script from the n-triples format to json-ld to ease access and readability.
+        </p>
+        <section id="ccy">
+            <h3>CCY</h3>
             <p>
-                We created two ontologies in order to make the most accurate description of a cryptocurrency.
-            </p>
-            <h4>CCY</h4>
-            <p>
-                Our ontology model is described as in the following illustrations:
+                The CCY ontology model is described as in the following illustrations:
             </p>
             <ul>
                 <li>The complete graph: <img src="images/ccy_graph.png"/></li>
                 <li>The arc relations between entities: <br> <img src="images/ccy_arc_types.png"/></li>
                 <li>The prefixes: <img src="images/ccy_prefixes.png"/></li>
                 <li>The most relevant metrics of the vocabulary: <img src="images/ccy_metrics.png"/></li>
+            </ul>
+        </section>
+        <section id="doacc">
+            <h3>DOACC</h3>
+            <p>
+                The DOACC ontology model is described as in the following illustrations:
+            </p>
+            <ul>
+                <li>The complete graph: <img src="images/doacc_graph.png"/></li>
+                <li>The arc relations between entities: <br> <img src="images/doacc_arc_types.png"/></li>
+                <li>The prefixes: <img src="images/doacc_prefixes.png"/></li>
+                <li>The most relevant metrics of the vocabulary: <img src="images/doacc_metrics.png"/></li>
             </ul>
         </section>
     </section>
@@ -149,8 +158,14 @@
     <section id="visualizations-of-data">
         <h2>Visualizations of Data</h2>
         <p>
-            <i>To be filled after implementing...</i>
+            “Data visualization is expert storytelling” (Murray, 2013). CryK exists for a better way of showing, managing and understanding various information about cryptocurrencies so people (and machines) make better decisions about their payments, investment and financial decisions overall.
+            In order to help people see, interact with, and better understand data, we will provide different types of illustrations for augmenting cognition. 
+            
         </p>
+        <h3>Piecharts</h3>
+        <img src="images/pieChart.png"/>
+        <h5>Barcharts</h5>
+        <img src="images/barChart.png"/>
     </section>
     <section id="linked-data-principles">
         <h2>Linked Data principles</h2>
@@ -162,8 +177,10 @@
                 <li>When someone looks up a URI, provide useful information, using the standards (RDF*, SPARQL) ✓</li>
                 <li>Include links to other URIs. so that they can discover more things. ✓</li>
             </ol>
+        </p>
+        <p>
             We are using HTTP URIs for every thing presented on the website, so a person or a machine can explore more data. We are also using them in order to identify resources by exposing several endpoints in our API.
-            As for the format and service standards, we are using the OWL format, which defines the ontology, and, moreover, expose a SPARQL service in order to provide a way of querying our database. 
+            As for the format and service standards, we are using the OWL format, which defines the ontology, n-triples and json-ld as formats for datasets and services, and moreover, expose a SPARQL service in order to provide a way of querying our database. 
             When clicking on an altcoin, we also included links to other related crypto currencies.
         </p>
     </section>
