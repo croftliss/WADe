@@ -1,5 +1,5 @@
 # WADe
-[Scholarly](https://app.swaggerhub.com/apis/Cosmin070/Cryk/0.1)
+[Scholarly](https://croftliss.github.io/WADe/scholarly-html-gh-pages/index.html)
 
 [CrykAPI OpenAPI](https://app.swaggerhub.com/apis/Cosmin070/Cryk/0.1)
 [CrykSemanticAPI OpenAPI](https://app.swaggerhub.com/apis/Cosmin070/CrykSemanticAPI/0.1)
