@@ -141,7 +141,16 @@
     <section id="linked-data-principles">
         <h2>Linked Data principles</h2>
         <p>
-            <i>To be filled after implementing...</i>
+            Our implementation follows the four rules of the Linked Data Initiative:
+            <ol>
+                <li>Use URIs as names for things ✓</li>
+                <li>Use HTTP URIs so that people can look up those names ✓</li>
+                <li>When someone looks up a URI, provide useful information, using the standards (RDF*, SPARQL) ✓</li>
+                <li>Include links to other URIs. so that they can discover more things. ✓</li>
+            </ol>
+            We are using HTTP URIs for every thing presented on the website, so a person or a machine can explore more data. We are also using them in order to identify resources by exposing several endpoints in our API.
+            As for the format and service standards, we are using the OWL format, which defines the ontology, and, moreover, expose a SPARQL service in order to provide a way of querying our database. 
+            When clicking on an altcoin, we also included links to other related crypto currencies.
         </p>
     </section>
     <section role="doc-biblioref" id="references">
