@@ -1,20 +1,16 @@
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>OAuth</title>
-    </head>
-    <body>
-        <nav>
-            <ul>
-                <li><a href="/">Homepage</a></li>
-            </ul>
-        </nav>
-        <header>
-            <h1>Net Ninja OAuth Tut's</h1>
-            <h2>Homepage</h2>
-        </header>
-        <main>
-            <p>Probably the best OAuth tutorials on the planet</p>
-        </main>
-    </body>
-</html>
+<%- include('partials/header') %>
+
+
+<div class="jumbotron centered">
+  <div class="container">
+    <i class="fas fa-key fa-6x"></i>
+    <h1 class="display-3">Secrets</h1>
+    <p class="lead">Don't keep your secrets, share them anonymously!</p>
+    <hr>
+    <a class="btn btn-light btn-lg" href="/register" role="button">Register</a>
+    <a class="btn btn-dark btn-lg" href="/login" role="button">Login</a>
+
+  </div>
+</div>
+
+<%- include('partials/footer') %>

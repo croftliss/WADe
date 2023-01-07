@@ -4,5 +4,6 @@
 
 /.vs
 /.git
-/Frontend/config/keys.js
+/Frontend/.env
 /Frontend/node_modules
+/Frontend/.DS_Store
