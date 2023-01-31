@@ -57,6 +57,21 @@
         in order to define a structure of knowledge for our main domain and more.
       </p>
     </section>
+    <section id = "progress">
+        <h2>Project progress</h2>
+        <p>
+            This project exceeded its initial goals and accomplished more than what was originally intended. Initially, the project was designed as a simple altcoin viewer that could produce data visualizations while fulfilling the requirements. 
+            The requirements were:
+            <ol><li>Manage the knowledge about existing cryptocurrencies and their (meta-)data.</li>
+                <li>Implement micro-services</li>
+                <li>Implement a SPARQL endpoint</li>
+                <li>Exposed information available in at least HTML+RDFa and JSON-LD</li>
+            </ol>
+            However, by the deadline, after completing the above mentioned goals, the team was also able to incorporate a secure user management system that allows users to track their favorite coins and monitor their performance. 
+            In addition, the project also features a functional SPARQL endpoint that enables users to navigate the web application's vocabulary. Even more, a basic recommandation model has been introduced, which gives hints to the user whether 
+            he should buy or not in the near future a cryptocurrency. This is a clear testament to the project's success in going beyond its initial purpose and delivering a comprehensive solution to users.
+        </p>
+    </section>
     <section id="structure">
         <!-- review? -->
         <h2>Technologies</h2>
@@ -77,19 +92,67 @@
                 </ul>
             </p>  
     </section>
+    <section id="Data">
+        <h2>Data</h2>
+        <section id = "data structures">
+        <h3>Data structures</h3>
+        <p>In order to manage the data within our project, we have made use of 4 models which are aligned to the project's needs and will be illustrated down below:</p>
+        <img class="image" src="images/Cryptocurrency_model.png" width="200" height="360">
+        <img class="image" src="images/Portfolio_model.png" width="140" height="125">
+        <img class="image" src="images/Profile_model.png" width="125" height="225">
+        <img class="image" src="images/User_model.png" width="115" height="100">
+        <p>The Cryptocurrency class will be used with the data received from DOACC in order to populate the fields for each cryptocurrency available in our project.</p>
+        <p>The Portfolio class is used to keep track of a user's coin portfolio, including the different types of coins they own and the number of each type.</p>
+        <p>The Profile class can be used to store and manage information about a user's personal profile, including their contact information, location, and personal details. This information can be used by other classes or applications to personalize the user experience and provide relevant content.</p>
+        <p>The User class is used in registration and login processes, where a user is required to provide their email address and password to create an account or access their existing account. The email and password combination is verified against a database to ensure the user is authorized to access the system. 
+        </p>
+        </section>
+        <section id = "external data">
+        <h3>External data</h3>
+        <p>The integration of the DOACC data and CoinGecko API has enabled us to deliver a powerful and informative system for users interested in the cryptocurrency market.
+            This information includes the symbol of the altcoin, its current price, and an illustration of the coin. To make this information more accessible and easier to work with, we have transformed the N-Triples received from 
+            the DOACC into JSON-LD. This transformation has increased the data flexibility within our system and allows us to easily access and manipulate the information as needed.
+        </p>
+        <h4>CoinGecko</h4>
+        <p>CoinGecko is a cryptocurrency data platform that provides real-time market data, charts, and insights for over 8,000 cryptocurrencies. By reaching out to CoinGecko's API, we can access up-to-date information about the price 
+            of different cryptocurrencies. This integration helps us provide valuable insights and information to our users about the cryptocurrency market. With the use of CoinGecko's API, we enhance the functionality of the project and 
+            make it more informative for our users. </p>
+        <h4>DOACC data</h4>
+        <p>The DOACC is a database of information regarding altcoins, which are cryptocurrencies other than Bitcoin. This database includes facts such as the name, trading symbol, total number of coins, target time for blocks, hashing algorithm used, date of launch, and URL for the source code repository.
+            We have integrated in our project the dataset that they provide, which is in n-triple format, in order to offer various information about the altcoins that are also available in the CoinGecko API.
+        </p>
+        </section>
+    </section>
     <section id="architecture">
         <h2>Architecture</h2>
         <p>
-            The project consists of multiple services, for frontend, developed using Angular, and for backend, written in Python. The backend has 2 APIs, one for SPARQL and one with a more general purpose, running at the same time, on different ports. The APIs are built using Flask.
-        </p>
+            The project consists of various components, including an Angular-based frontend and a node.js server, as well as a Python-based backend utilizing Flask. The backend features two APIs - one for SPARQL queries and another for managing 
+            user accounts, coins, and other related data. These services are designed as micro-services, running concurrently on separate ports and managing data from various sources. User-specific information is stored on MongoDB Atlas for availability and manageability, 
+            while information about altcoins is stored within the server in for reduced latency.</p>
         <section id="diagram">
-            <h3>Diagram</h3>
+            <h3>General diagram</h3>
             <p>
                 The application follows a very simple architecture, from a frontend client, the actions done by the user call different endpoints in 2 APIs, one with a more general purpose (generate data for visualizations based on SPARQL queries), and the other one, a semantic API that is more of a wrapper for SPARQL that has a bunch of queries ready to be used on our onthology obtained from <a href="https://doacc.github.io/">DOACC</a>.
             </p>
             <img class="image" src="images/Architecture.png" width="660" height="726">
         </section>
-
+        <section id="flows">
+            <h3>Task flows</h3>
+            <h4>Login/Register</h4>
+            <p>In order for the user to gain full access to our web application, it is mandatory to create an account first. This can be achieved through either OAuth2 with google, or with our custom login/register. To add a higher degree of security, 
+                the account information is stored after applying a salt and hash upon them. <img src="images/Login_step.png"/></p>
+            <h4>General</h4>
+            <p>Upon successful login, the user's session is maintained using JSON Web Tokens (JWT). The following actions are available for the user:
+                <ul><li>Updating their personal profile.</li>
+                <li>Managing their wallet to monitor portfolio performance.</li>
+                <li>Accessing cryptocurrency information, such as price, symbol, and protocol.</li>
+                <li>Performing SPARQL queries on available RDF data.</li>
+                <li>Visualizing the comparative performance of altcoins in various formats.</li> <img src="images/General_overview.png"/></p>
+                </ul>
+        </section>
+    </section>
+    <section id="model">
+        <h2>Cryptocurrency buying recommender</h2>
     </section>
     <section id="ontology">
         <h2>Ontology</h2>
@@ -97,32 +160,23 @@
             The choice of the ontology language to utilize in a particular situation must be made before beginning to create an ontology-based system. For our project, we have used the <u>Ontology Web Language</u> (OWL) format for modeling our data, which was acquired through the <a href="https://doacc.github.io/">DOACC</a> project and these files came in the above mentioned extension. The tool used to display the ontologies and extract some metrics and previews was <a href="https://protege.stanford.edu/">Protege</a>, a free, open-source ontology editor.
         </p>
         <p>            
-            In order to be as accurate as possible, we used two ontologies, CCY (cryptocurrency) and DOACC (description of a cryptocurrency), and the dataset that we gathered was converted through a custom script from the n-triples format to json-ld to ease access and readability.
+            The dataset that we gathered was converted through a custom script from the n-triples format to json-ld to ease access and readability.
         </p>
-        <section id="ccy">
-            <h3>CCY</h3>
-            <p>
-                The CCY ontology model is described as in the following illustrations:
-            </p>
-            <ul>
-                <li>The complete graph: <img src="images/ccy_graph.png"/></li>
-                <li>The arc relations between entities: <br> <img src="images/ccy_arc_types.png"/></li>
-                <li>The prefixes: <img src="images/ccy_prefixes.png"/></li>
-                <li>The most relevant metrics of the vocabulary: <img src="images/ccy_metrics.png"/></li>
-            </ul>
-        </section>
-        <section id="doacc">
-            <h3>DOACC</h3>
-            <p>
-                The DOACC ontology model is described as in the following illustrations:
-            </p>
-            <ul>
-                <li>The complete graph: <img src="images/doacc_graph.png"/></li>
-                <li>The arc relations between entities: <br> <img src="images/doacc_arc_types.png"/></li>
-                <li>The prefixes: <img src="images/doacc_prefixes.png"/></li>
-                <li>The most relevant metrics of the vocabulary: <img src="images/doacc_metrics.png"/></li>
-            </ul>
-        </section>
+        <h3>DOACC</h3>
+        <p>
+            The DOACC ontology model is described as in the following illustrations:
+        </p>
+        <ul>
+            <li>The complete graph: <img src="images/doacc_graph.png"/></li>
+            <li>The arc relations between entities: <br> <img src="images/doacc_arc_types.png"/></li>
+            <li>The prefixes: <img src="images/doacc_prefixes.png"/></li>
+            <li>The most relevant metrics of the vocabulary: <img src="images/doacc_metrics.png"/></li>
+            <li>The data managed by our system (in terms of the cryptocurrency information handled) comes first of all from the properties of the DOACC ontology: <img src="images/dataset_visualizer.png"/></li>
+        </ul>
+    </section>
+    <section id = "knowledge">
+        <h2>Knowledge usage</h2>
+        <p> lessgo</p>
     </section>
     <section id="api">
         <h2>APIs</h2>
