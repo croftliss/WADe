@@ -113,19 +113,27 @@
         </p>
         </section>
         <section id = "external data">
-        <h3>External data</h3>
-        <p>The integration of the DOACC data and CoinGecko API has enabled us to deliver a powerful and informative system for users interested in the cryptocurrency market.
-            This information includes the symbol of the altcoin, its current price, and an illustration of the coin. To make this information more accessible and easier to work with, we have transformed the N-Triples received from 
-            the DOACC into JSON-LD. This transformation has increased the data flexibility within our system and allows us to easily access and manipulate the information as needed.
-        </p>
-        <h4>CoinGecko</h4>
-        <p>CoinGecko is a cryptocurrency data platform that provides real-time market data, charts, and insights for over 8,000 cryptocurrencies. By reaching out to CoinGecko's API, we can access up-to-date information about the price 
-            of different cryptocurrencies. This integration helps us provide valuable insights and information to our users about the cryptocurrency market. With the use of CoinGecko's API, we enhance the functionality of the project and 
-            make it more informative for our users. </p>
-        <h4>DOACC data</h4>
-        <p>The DOACC is a database of information regarding altcoins, which are cryptocurrencies other than Bitcoin. This database includes facts such as the name, trading symbol, total number of coins, target time for blocks, hashing algorithm used, date of launch, and URL for the source code repository.
-            We have integrated in our project the dataset that they provide, which was in N-Triple format, and converted into JSON-LD, in order to offer various information about the altcoins that are also available in the CoinGecko API.
-        </p>
+            <h3>External data</h3>
+            <p>The integration of the DOACC data and CoinGecko API has enabled us to deliver a powerful and informative system for users interested in the cryptocurrency market.
+                This information includes the symbol of the altcoin, its current price, and an illustration of the coin. To make this information more accessible and easier to work with, we have transformed the N-Triples received from 
+                the DOACC into JSON-LD. This transformation has increased the data flexibility within our system and allows us to easily access and manipulate the information as needed.
+            </p>
+            <h4>CoinGecko</h4>
+            <p>CoinGecko is a cryptocurrency data platform that provides real-time market data, charts, and insights for over 8,000 cryptocurrencies. By reaching out to CoinGecko's API, we can access up-to-date information about the price 
+                of different cryptocurrencies. This integration helps us provide valuable insights and information to our users about the cryptocurrency market. With the use of CoinGecko's API, we enhance the functionality of the project and 
+                make it more informative for our users. </p>
+            <h4>DOACC data</h4>
+            <p>The DOACC is a database of information regarding altcoins, which are cryptocurrencies other than Bitcoin. This database includes facts such as the name, trading symbol, total number of coins, target time for blocks, hashing algorithm used, date of launch, and URL for the source code repository.
+                We have integrated in our project the dataset that they provide, which is in n-triple format, in order to offer various information about the altcoins that are also available in the CoinGecko API.
+            </p>
+        </section>
+        <section id = "Data transformations">
+            <h3>Data transformations</h3>
+            <p>The data received from DOACC in N-TRIPLES format was transformed into a JSON-LD format to make it more manageable and to move closer to the ultimate goal of exposing data in JSON-LD and HTML+RDFa. For efficient management of the data, 
+                it was often converted back to simple JSON, facilitating communication between the front-end and back-end. If it is desired to view the data in either JSON-LD or HTML+RDFa, it is simple to make a call to our API at
+                *<i>/ontology/api/"format"/getCryptocurrenciesByName</i>* and specify the desired format. This process is illustrated in the diagram below:
+                <img src="images/data_transformation.png"/>
+            </p>
         </section>
     </section>
     <section id="architecture">
@@ -141,31 +149,21 @@
             </p>
             <img class="image" src="images/Architecture.png" width="660" height="726">
         </section>
-        <section id="flows">
-            <h3>Task flows</h3>
-            <h4>Login/Register</h4>
-            <p>In order for the user to gain full access to our web application, it is mandatory to create an account first. This can be achieved through either OAuth2 with google, or with our custom login/register. To add a higher degree of security, 
-                the account information is stored after applying a salt and hash upon them. <img src="images/Login_step.png"/></p>
-            <h4>General</h4>
-            <p>Upon successful login, the user's session is maintained using JSON Web Tokens (JWT). The following actions are available for the user:
-                <ul>
-                    <li>Updating their personal profile.</li>
-                <li>Managing their wallet to monitor portfolio performance.</li>
-                <li>Accessing cryptocurrency information, such as price, symbol, and protocol.</li>
-                <li>Performing SPARQL queries on available RDF data.</li>
-                <li>Visualizing the comparative performance of altcoins in various formats.</li> <img src="images/General_overview.png"/></p>
-                </ul>
-        </section>
     </section>
     <section id="model">
         <h2>Cryptocurrency buying recommender</h2>
         The model was created using the SequentialModel from <a href="https://www.tensorflow.org/">Tensorflow</a>. The model features the following layers:
         <ol>
             <li>The first layer adds a new axis to the input that will be used to obtain the predictions;</li>
-            <li>The second layer creates a convolutional kernel with the input layer over the spatial dimension to produce a tensor with the given dimensions (in our case 128 filters) and a kernel of size 5x5</li>
-            <li>The third layer creates a fully dense layer that would </li>
+            <li>The second layer creates a convolutional kernel with the input layer over the spatial dimension to produce a tensor with the given dimensions (in our case 128 filters) and a kernel of size 5x5;</li>
+            <li>The third layer creates a fully dense layer in order to take into account all the values produced by the previous layer and "classify" them into 128 classes;</li>
+            <li>The last layer does the same thing as the previous one, but it produces 2 values that correspond to the predicted values for the input coin for the next 2 days</li>
         </ol>
-        <img class="image" src="images/ML_model.png" width="600" height="250">
+        <img class="image" src="images/ML_model.png" width="600" height="250"><br />
+        We trained 3 such models, each based on the historical prices of different cryptocurrencies (ETH, BTC and DOGE). Based on the output of each model, the percetage obtained after calling the model produces a percentage that indicates the confidence that the model has whether the coin would raise or not in price. As we said previously, this does not mean that the coin will actually grow in price, and users should not invest based on that percentage.
+        <img class="image" src="images/prediction-doge.png" width="600" height="250"><br />
+        In the image above, the blue dots represent the real progress through which Dogecoin went through, and with orange dots we have the predicted values for Dogecoin for the next half a year.
+        The model above has a loss of 0.0590. <img class="image" src="images/loss.png" width="100" height="25">
     </section>
     <section id="ontology">
         <h2>Ontology</h2>
@@ -203,23 +201,26 @@
         <h2>APIs</h2>
         JumpyBugs implemented the APIs using Flask, due to its simplicity in launching a very simple server, capable of accepting multiple requests of different methods (POST, GET), accessing the request's data, handling user cookies, and having an easy way in which responses can be send back as JSON.
         <section id="semantic-api">
-            <h3>Semantic API</h3>
+            <h3>CryKSemanticAPI</h3>
             <p>
-                The semantic API works as a wrapper for SPARQL queries. Each endpoint has assigned a query, and when it is called, it will return the response as JSON. The queries are ran against our ontology obtained from <a href="https://doacc.github.io/">DOACC</a>.
+                This API handles requests for obtaining information about cryptocurrencies from the JSON-LD file converted from the DOACC dataset. The API calls the Ontology Wrapper that has methods for obtaining all the cryptocurrencies or filtered based on the name or protocol. The cryptocurrencies are firstly filtered by the coins which CoinGECKO can actually handle, and then via the filters required by the request. The API offers the information in different formats, JSON, JSON-LD or HTML-RDFa, all of which were validated using online tools.<br />
+                As an example, let's see how the following route works:<br />
+                <img src="images/route-semantic-api.png" />
+                The route takes as parameter in which format the response should be returned in (JSON-LD or HTML RDFa), and the takes the coin names from the request body, and performs the query on the JSON-LD from DOACC. A sample response for that endpoint is the following, as validated for JSON-LD:<br />
+                <img src="images/json-ld-bitcoin.png" />
             </p>
         </section>
         <section id="cryk-api">
             <h3>CryK API</h3>
             <p>
-                The CryK API works as a multi-purpose API, capable of generating and formatting the data accordingly to how the visualizer will require its input. 
+                The CryK API works as a multi-purpose API handling user login, user portfolio and user profile. The API also handles the images for the cryptocurrencies, keeping our frontend lightweight. Most of the routes are protected using the token obtain from Google OAuth or by the user's id, one of which must be present as a header for the request. The responses are much simpler for this API, as it returns JSONs.
             </p>
         </section>
     </section>
     <section id="article">
       <h3>Use cases</h3>
       <p>
-        Cryptocurrencies aim to solve a diverse range of problems commonly found in almost all industries.
-        A few use cases for which the catalogue of coins will come in handy would be:
+        Cryptocurrencies have been designed to address a variety of issues prevalent across multiple industries. These digital assets can be used in several ways, including:
       </p>
       <p>
         <ul>
@@ -228,6 +229,27 @@
             <li>Exchange</li>
         </ul>
       </p>
+      <p>Our project is focused on providing support to users with their digital assets. One of our key objectives is to enable users to effectively track and manage their digital assets. Additionally, our project also aims to educate and guide users 
+        towards making informed decisions in the cryptocurrency market. We strive to provide the necessary tools and information to help users identify the best opportunities and make the most of their investments in the cryptocurrency space.</p>
+        <h3>Task flows</h3>
+        <h4>Login/Register</h4>
+        <p>In order for the user to gain full access to our web application, it is mandatory to create an account first. This can be achieved through either OAuth2 with google, or with our custom login/register. Our authentication service is designed to enhance 
+            security by implementing a secure method for storing and validating user credentials. The process involves the use of a combination of a hash and salt on the password to generate a unique and encrypted representation of the password. This ensures that 
+            even if the password is compromised, the attacker would not be able to obtain the actual password, thus providing an extra layer of security to the user's account. Upon successful login, the user's session is maintained either through a JWT 
+            (if the option chosen is OAuth2) or via a session ID cookie.</p>
+            <img src="images/Login_step.png"/>
+        <h4>General</h4>
+        <p>The following actions are available for the user:
+            <ul>
+                <li>Updating their personal profile.</li>
+                <li>Managing their wallet to monitor portfolio performance.</li>
+                <li>Accessing cryptocurrency information, such as price, symbol, and protocol.</li>
+                <li>Performing SPARQL queries on available RDF data.</li>
+                <li>Visualizing the comparative performance of altcoins in various formats.</li> 
+                <li>See how the most important coins fare and a quick price prediction for the cryptocurrencies</li>
+            </ul>
+            <img src="images/General_overview.png"/>
+        </p>
     </section>
     <section id="visualizations-of-data">
         <h2>Visualizations of Data</h2>
@@ -265,6 +287,10 @@
             <li><a href="https://profs.info.uaic.ro/~busaco/teach/courses/wade/web-film.html">https://profs.info.uaic.ro/~busaco/teach/courses/wade/web-film.html</a></li>
             <li><a href="https://protege.stanford.edu/">Protégé</a></li>
             <li><a href="https://doacc.github.io/">DOACC</a></li>
+            <li><a href="https://www.tensorflow.org/">Tensorflow</a></li>
+            <li><a href="https://json-ld.org/#developers">JSON-LD</a></li>
+            <li><a href="https://json-ld.org/playground/">JSON-LD Playground</a></li>
+            <li><a href="https://rdfa.info/play/">HTML+RDFa validator</a></li>
         </ul>
     </section>
 </body>
