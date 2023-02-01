@@ -243,6 +243,34 @@
                 </ul>
                 <img src="images/General_overview.png"/>
             </p>
+            <h4>Home</h4>
+            <p>The "Home" tab on the platform provides a comprehensive overview of the most crucial cryptocurrencies and displays their current prices, along with the model's prediction for their short-term future performance. 
+                This allows the user to quickly and easily access information on the cryptocurrencies they follow, making it convenient for them to stay updated on market trends and make informed decisions.
+                The frontend calls the SemanticAPI to receive the json-ld data about the coins. The CrykAPI is used to receive the images about the coins and their current price and to retrieve the prediction from the model.<img src="images/Home_diagram.png"/>
+            </p>
+            <h4>Wallet</h4>
+            <p>The "Wallet" tab enables users to personalize and manage their cryptocurrency portfolio by setting it up according to their preferences. This feature allows them to closely monitor the performance of their investments and keep a record of 
+                their portfolio's growth. The frontend calls the SemanticAPI to retrieve the coins' names, while the CrykAPI retrieves the amount of crypto currency for each altcoin from Atlas.
+                <img src="images/Wallet_diagram.png"/>
+            </p>
+            <h4>SparQL</h4>
+            <p>The "Sparql" tab serves as a tool for the user to retrieve information from our vocabulary by executing queries on our SPARQL endpoint. This tab provides a user-friendly interface that facilitates the process of querying data, making it easier to find specific 
+                information within the vocabulary. Additionally, the use of SPARQL, a semantic query language, allows for more complex and sophisticated queries to be executed, enabling users to extract relevant information with greater accuracy and efficiency.</p>
+                <img src="images/sparql_diagram.jpg"/>
+            <h4>Cryptocurrencies</h4>
+            <p>The "Cryptocurrencies" tab provides users with a means to delve into the world of cryptocurrency and examine the range of alternative coins along with their associated information. The flow of data is facilitated through the use of two APIs: 
+                the SemanticAPI and the CrykAPI. The SemanticAPI retrieves the relevant information from the json-ld file and the CrykAPI then sends back the corresponding image for each coin. Additionally, the user has the option to view the complete list of 
+                metadata if they choose so and another call from the SemanticAPI is made.
+                <img src="images/Cryptocurrencies_diagram.png"/>
+            </p>
+            <h4>Profile</h4>
+            <p>The "Profile" page offers users the capability to personalize their page to their liking. The frontend of the application communicates with the CrykAPI in order to retrieve information related to the user's account from Atlas.
+                <img src="images/Profile_diagram.png"/>
+            </p>
+            <h4>Visualization</h4>
+            <p>The visualization page allows the user to compare the historical data for two selected coins for the past 5 days, showing values for both USD and EUR for the selected coins.
+                <img src="images/visualization_diagram.png"/>
+            </p>
         </section>
     </section>
     <section id="visualizations-of-data">
