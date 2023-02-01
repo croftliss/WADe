@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>CrykSemanticAPI</title>
+  <title>defaultTitle</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta charset="UTF-8" />
@@ -689,10 +689,10 @@
   <script>
     // Script section to load models into a JS Var
     var defs = {}
-            defs["api_cryptocurrenciesById_body"] = {
+            defs["api_cryptocurrenciesByName_body"] = {
   "type" : "object",
   "properties" : {
-    "ids" : {
+    "coins" : {
       "type" : "array",
       "items" : {
         "type" : "string"
@@ -700,19 +700,33 @@
     }
   }
 };
-            defs["api_cryptocurrenciesByYears_body"] = {
+            defs["api_runQuery_body"] = {
   "type" : "object",
   "properties" : {
-    "period" : {
-      "$ref" : "#/components/schemas/ontologyapicryptocurrenciesByYears_period"
+    "query" : {
+      "type" : "string"
     }
   }
 };
-            defs["ontologyapicryptocurrenciesByYears_period"] = {
+            defs["htmlrdfa_getCryptocurrenciesByName_body"] = {
   "type" : "object",
   "properties" : {
-    "from_year" : {
-      "type" : "integer"
+    "coins" : {
+      "type" : "array",
+      "items" : {
+        "type" : "string"
+      }
+    }
+  }
+};
+            defs["jsonld_getCryptocurrenciesByName_body"] = {
+  "type" : "object",
+  "properties" : {
+    "coins" : {
+      "type" : "array",
+      "items" : {
+        "type" : "string"
+      }
     }
   }
 };
@@ -733,20 +747,29 @@
             <li class="nav-fixed nav-header active" data-group="_"><a href="#api-_">API Summary</a></li>
 
                   <li class="nav-header" data-group="Default"><a href="#api-Default">API Methods - Default</a></li>
-                    <li data-group="Default" data-name="ontologyApiCryptocurrenciesByIdPost" class="">
-                      <a href="#api-Default-ontologyApiCryptocurrenciesByIdPost">ontologyApiCryptocurrenciesByIdPost</a>
-                    </li>
-                    <li data-group="Default" data-name="ontologyApiCryptocurrenciesByYearsPost" class="">
-                      <a href="#api-Default-ontologyApiCryptocurrenciesByYearsPost">ontologyApiCryptocurrenciesByYearsPost</a>
+                    <li data-group="Default" data-name="ontologyApiCryptocurrenciesByNamePost" class="">
+                      <a href="#api-Default-ontologyApiCryptocurrenciesByNamePost">ontologyApiCryptocurrenciesByNamePost</a>
                     </li>
                     <li data-group="Default" data-name="ontologyApiCryptocurrenciesGet" class="">
                       <a href="#api-Default-ontologyApiCryptocurrenciesGet">ontologyApiCryptocurrenciesGet</a>
                     </li>
-                    <li data-group="Default" data-name="ontologyApiCryptocurrenciesIdGet" class="">
-                      <a href="#api-Default-ontologyApiCryptocurrenciesIdGet">ontologyApiCryptocurrenciesIdGet</a>
+                    <li data-group="Default" data-name="ontologyApiCryptocurrencyGet" class="">
+                      <a href="#api-Default-ontologyApiCryptocurrencyGet">ontologyApiCryptocurrencyGet</a>
                     </li>
-                    <li data-group="Default" data-name="ontologyApiProtocolCryptocurrenciesGet" class="">
-                      <a href="#api-Default-ontologyApiProtocolCryptocurrenciesGet">ontologyApiProtocolCryptocurrenciesGet</a>
+                    <li data-group="Default" data-name="ontologyApiHtmlRdfaGetCryptocurrenciesByNamePost" class="">
+                      <a href="#api-Default-ontologyApiHtmlRdfaGetCryptocurrenciesByNamePost">ontologyApiHtmlRdfaGetCryptocurrenciesByNamePost</a>
+                    </li>
+                    <li data-group="Default" data-name="ontologyApiHtmlRdfaGetCryptocurrenciesGet" class="">
+                      <a href="#api-Default-ontologyApiHtmlRdfaGetCryptocurrenciesGet">ontologyApiHtmlRdfaGetCryptocurrenciesGet</a>
+                    </li>
+                    <li data-group="Default" data-name="ontologyApiJsonLdGetCryptocurrenciesByNamePost" class="">
+                      <a href="#api-Default-ontologyApiJsonLdGetCryptocurrenciesByNamePost">ontologyApiJsonLdGetCryptocurrenciesByNamePost</a>
+                    </li>
+                    <li data-group="Default" data-name="ontologyApiJsonLdGetCryptocurrenciesGet" class="">
+                      <a href="#api-Default-ontologyApiJsonLdGetCryptocurrenciesGet">ontologyApiJsonLdGetCryptocurrenciesGet</a>
+                    </li>
+                    <li data-group="Default" data-name="ontologyApiRunQueryPost" class="">
+                      <a href="#api-Default-ontologyApiRunQueryPost">ontologyApiRunQueryPost</a>
                     </li>
           </ul>
         </nav>
@@ -754,25 +777,25 @@
       <div id="content">
         <div id="project">
           <div class="pull-left">
-            <h1>CrykSemanticAPI</h1>
+            <h1>defaultTitle</h1>
           </div>
           <div class="clearfix"></div>
         </div>
         <div id="header">
           <div id="api-_">
             <h2 id="welcome-to-apidoc">API and SDK Documentation</h2>
-              <div class="app-desc">Version: 0.1</div>
+              <div class="app-desc">Version: 1.2</div>
             <hr>
-            <div>Semantic API for Cryk</div>
+            <div>defaultDescription</div>
           </div>
         </div>
         <div id="sections">
                 <section id="api-Default">
                   <h1>Default</h1>
-                    <div id="api-Default-ontologyApiCryptocurrenciesByIdPost">
-                      <article id="api-Default-ontologyApiCryptocurrenciesByIdPost-0" data-group="User" data-name="ontologyApiCryptocurrenciesByIdPost" data-version="0">
+                    <div id="api-Default-ontologyApiCryptocurrenciesByNamePost">
+                      <article id="api-Default-ontologyApiCryptocurrenciesByNamePost-0" data-group="User" data-name="ontologyApiCryptocurrenciesByNamePost" data-version="0">
                         <div class="pull-left">
-                          <h1>ontologyApiCryptocurrenciesByIdPost</h1>
+                          <h1>ontologyApiCryptocurrenciesByNamePost</h1>
                           <p></p>
                         </div>
                         <div class="pull-right"></div>
@@ -781,32 +804,32 @@
                         <p class="marked">Auto generated using Swagger Inspector</p>
                         <p></p>
                         <br />
-                        <pre class="prettyprint language-html prettyprinted" data-type="post"><code><span class="pln">/ontology/api/cryptocurrenciesById</span></code></pre>
+                        <pre class="prettyprint language-html prettyprinted" data-type="post"><code><span class="pln">/ontology/api/cryptocurrenciesByName</span></code></pre>
                         <p>
                           <h3>Usage and SDK Samples</h3>
                         </p>
                         <ul class="nav nav-tabs nav-tabs-examples">
-                          <li class="active"><a href="#examples-Default-ontologyApiCryptocurrenciesByIdPost-0-curl">Curl</a></li>
-                          <li class=""><a href="#examples-Default-ontologyApiCryptocurrenciesByIdPost-0-java">Java</a></li>
-                          <li class=""><a href="#examples-Default-ontologyApiCryptocurrenciesByIdPost-0-android">Android</a></li>
-                          <!--<li class=""><a href="#examples-Default-ontologyApiCryptocurrenciesByIdPost-0-groovy">Groovy</a></li>-->
-                          <li class=""><a href="#examples-Default-ontologyApiCryptocurrenciesByIdPost-0-objc">Obj-C</a></li>
-                          <li class=""><a href="#examples-Default-ontologyApiCryptocurrenciesByIdPost-0-javascript">JavaScript</a></li>
-                          <!--<li class=""><a href="#examples-Default-ontologyApiCryptocurrenciesByIdPost-0-angular">Angular</a></li>-->
-                          <li class=""><a href="#examples-Default-ontologyApiCryptocurrenciesByIdPost-0-csharp">C#</a></li>
-                          <li class=""><a href="#examples-Default-ontologyApiCryptocurrenciesByIdPost-0-php">PHP</a></li>
-                          <li class=""><a href="#examples-Default-ontologyApiCryptocurrenciesByIdPost-0-perl">Perl</a></li>
-                          <li class=""><a href="#examples-Default-ontologyApiCryptocurrenciesByIdPost-0-python">Python</a></li>
+                          <li class="active"><a href="#examples-Default-ontologyApiCryptocurrenciesByNamePost-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Default-ontologyApiCryptocurrenciesByNamePost-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Default-ontologyApiCryptocurrenciesByNamePost-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Default-ontologyApiCryptocurrenciesByNamePost-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Default-ontologyApiCryptocurrenciesByNamePost-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Default-ontologyApiCryptocurrenciesByNamePost-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Default-ontologyApiCryptocurrenciesByNamePost-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Default-ontologyApiCryptocurrenciesByNamePost-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Default-ontologyApiCryptocurrenciesByNamePost-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Default-ontologyApiCryptocurrenciesByNamePost-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Default-ontologyApiCryptocurrenciesByNamePost-0-python">Python</a></li>
                         </ul>
 
                         <div class="tab-content">
-                          <div class="tab-pane active" id="examples-Default-ontologyApiCryptocurrenciesByIdPost-0-curl">
+                          <div class="tab-pane active" id="examples-Default-ontologyApiCryptocurrenciesByNamePost-0-curl">
                            <pre class="prettyprint"><code class="language-bsh">curl -X POST\
 -H "Accept: application/json"\
 -H "Content-Type: application/json"\
-"http://127.0.0.1:5001/ontology/api/cryptocurrenciesById"</code></pre>
+"http://127.0.0.1:5001/ontology/api/cryptocurrenciesByName"</code></pre>
                           </div>
-                          <div class="tab-pane" id="examples-Default-ontologyApiCryptocurrenciesByIdPost-0-java">
+                          <div class="tab-pane" id="examples-Default-ontologyApiCryptocurrenciesByNamePost-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
 import io.swagger.client.auth.*;
 import io.swagger.client.model.*;
@@ -820,52 +843,52 @@ public class DefaultApiExample {
     public static void main(String[] args) {
         
         DefaultApi apiInstance = new DefaultApi();
-        Api_cryptocurrenciesById_body body = {
-  "value" : "{\n    \"ids\": [\"1\"]\n}"
-}; // Api_cryptocurrenciesById_body | 
+        Api_cryptocurrenciesByName_body body = {
+  "value" : "{\n    \"coins\": [\"bitcoin\", \"ethereum\", \"dogecoin\"]\n}"
+}; // Api_cryptocurrenciesByName_body | 
         try {
-            Object result = apiInstance.ontologyApiCryptocurrenciesByIdPost(body);
+            Object result = apiInstance.ontologyApiCryptocurrenciesByNamePost(body);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#ontologyApiCryptocurrenciesByIdPost");
+            System.err.println("Exception when calling DefaultApi#ontologyApiCryptocurrenciesByNamePost");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
 
-                          <div class="tab-pane" id="examples-Default-ontologyApiCryptocurrenciesByIdPost-0-android">
+                          <div class="tab-pane" id="examples-Default-ontologyApiCryptocurrenciesByNamePost-0-android">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.DefaultApi;
 
 public class DefaultApiExample {
 
     public static void main(String[] args) {
         DefaultApi apiInstance = new DefaultApi();
-        Api_cryptocurrenciesById_body body = {
-  "value" : "{\n    \"ids\": [\"1\"]\n}"
-}; // Api_cryptocurrenciesById_body | 
+        Api_cryptocurrenciesByName_body body = {
+  "value" : "{\n    \"coins\": [\"bitcoin\", \"ethereum\", \"dogecoin\"]\n}"
+}; // Api_cryptocurrenciesByName_body | 
         try {
-            Object result = apiInstance.ontologyApiCryptocurrenciesByIdPost(body);
+            Object result = apiInstance.ontologyApiCryptocurrenciesByNamePost(body);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#ontologyApiCryptocurrenciesByIdPost");
+            System.err.println("Exception when calling DefaultApi#ontologyApiCryptocurrenciesByNamePost");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
   <!--
-  <div class="tab-pane" id="examples-Default-ontologyApiCryptocurrenciesByIdPost-0-groovy">
+  <div class="tab-pane" id="examples-Default-ontologyApiCryptocurrenciesByNamePost-0-groovy">
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
-                            <div class="tab-pane" id="examples-Default-ontologyApiCryptocurrenciesByIdPost-0-objc">
-                              <pre class="prettyprint"><code class="language-cpp">Api_cryptocurrenciesById_body *body = {
-  "value" : "{\n    \"ids\": [\"1\"]\n}"
+                            <div class="tab-pane" id="examples-Default-ontologyApiCryptocurrenciesByNamePost-0-objc">
+                              <pre class="prettyprint"><code class="language-cpp">Api_cryptocurrenciesByName_body *body = {
+  "value" : "{\n    \"coins\": [\"bitcoin\", \"ethereum\", \"dogecoin\"]\n}"
 }; //  (optional)
 
 DefaultApi *apiInstance = [[DefaultApi alloc] init];
 
-[apiInstance ontologyApiCryptocurrenciesByIdPostWith:body
+[apiInstance ontologyApiCryptocurrenciesByNamePostWith:body
               completionHandler: ^(Object output, NSError* error) {
                             if (output) {
                                 NSLog(@"%@", output);
@@ -877,14 +900,14 @@ DefaultApi *apiInstance = [[DefaultApi alloc] init];
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-ontologyApiCryptocurrenciesByIdPost-0-javascript">
-                              <pre class="prettyprint"><code class="language-js">var CrykSemanticApi = require('cryk_semantic_api');
+                            <div class="tab-pane" id="examples-Default-ontologyApiCryptocurrenciesByNamePost-0-javascript">
+                              <pre class="prettyprint"><code class="language-js">var DefaultTitle = require('default_title');
 
-var api = new CrykSemanticApi.DefaultApi()
+var api = new DefaultTitle.DefaultApi()
 var opts = { 
   'body': {
-  "value" : "{\n    \"ids\": [\"1\"]\n}"
-} // {{Api_cryptocurrenciesById_body}} 
+  "value" : "{\n    \"coins\": [\"bitcoin\", \"ethereum\", \"dogecoin\"]\n}"
+} // {{Api_cryptocurrenciesByName_body}} 
 };
 var callback = function(error, data, response) {
   if (error) {
@@ -893,14 +916,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.ontologyApiCryptocurrenciesByIdPost(opts, callback);
+api.ontologyApiCryptocurrenciesByNamePost(opts, callback);
 </code></pre>
                             </div>
 
-                            <!--<div class="tab-pane" id="examples-Default-ontologyApiCryptocurrenciesByIdPost-0-angular">
+                            <!--<div class="tab-pane" id="examples-Default-ontologyApiCryptocurrenciesByNamePost-0-angular">
               <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
             </div>-->
-                            <div class="tab-pane" id="examples-Default-ontologyApiCryptocurrenciesByIdPost-0-csharp">
+                            <div class="tab-pane" id="examples-Default-ontologyApiCryptocurrenciesByNamePost-0-csharp">
                               <pre class="prettyprint"><code class="language-cs">using System;
 using System.Diagnostics;
 using IO.Swagger.Api;
@@ -909,22 +932,22 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class ontologyApiCryptocurrenciesByIdPostExample
+    public class ontologyApiCryptocurrenciesByNamePostExample
     {
         public void main()
         {
 
             var apiInstance = new DefaultApi();
-            var body = new Api_cryptocurrenciesById_body(); // Api_cryptocurrenciesById_body |  (optional) 
+            var body = new Api_cryptocurrenciesByName_body(); // Api_cryptocurrenciesByName_body |  (optional) 
 
             try
             {
-                Object result = apiInstance.ontologyApiCryptocurrenciesByIdPost(body);
+                Object result = apiInstance.ontologyApiCryptocurrenciesByNamePost(body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling DefaultApi.ontologyApiCryptocurrenciesByIdPost: " + e.Message );
+                Debug.Print("Exception when calling DefaultApi.ontologyApiCryptocurrenciesByNamePost: " + e.Message );
             }
         }
     }
@@ -932,42 +955,42 @@ namespace Example
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-ontologyApiCryptocurrenciesByIdPost-0-php">
+                            <div class="tab-pane" id="examples-Default-ontologyApiCryptocurrenciesByNamePost-0-php">
                               <pre class="prettyprint"><code class="language-php"><&#63;php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\ApiDefaultApi();
 $body = {
-  "value" : "{\n    \"ids\": [\"1\"]\n}"
-}; // Api_cryptocurrenciesById_body | 
+  "value" : "{\n    \"coins\": [\"bitcoin\", \"ethereum\", \"dogecoin\"]\n}"
+}; // Api_cryptocurrenciesByName_body | 
 
 try {
-    $result = $api_instance->ontologyApiCryptocurrenciesByIdPost($body);
+    $result = $api_instance->ontologyApiCryptocurrenciesByNamePost($body);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->ontologyApiCryptocurrenciesByIdPost: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DefaultApi->ontologyApiCryptocurrenciesByNamePost: ', $e->getMessage(), PHP_EOL;
 }
 ?></code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-ontologyApiCryptocurrenciesByIdPost-0-perl">
+                            <div class="tab-pane" id="examples-Default-ontologyApiCryptocurrenciesByNamePost-0-perl">
                               <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
 use WWW::SwaggerClient::Configuration;
 use WWW::SwaggerClient::DefaultApi;
 
 my $api_instance = WWW::SwaggerClient::DefaultApi->new();
-my $body = WWW::SwaggerClient::Object::Api_cryptocurrenciesById_body->new(); # Api_cryptocurrenciesById_body | 
+my $body = WWW::SwaggerClient::Object::Api_cryptocurrenciesByName_body->new(); # Api_cryptocurrenciesByName_body | 
 
 eval { 
-    my $result = $api_instance->ontologyApiCryptocurrenciesByIdPost(body => $body);
+    my $result = $api_instance->ontologyApiCryptocurrenciesByNamePost(body => $body);
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling DefaultApi->ontologyApiCryptocurrenciesByIdPost: $@\n";
+    warn "Exception when calling DefaultApi->ontologyApiCryptocurrenciesByNamePost: $@\n";
 }</code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-ontologyApiCryptocurrenciesByIdPost-0-python">
+                            <div class="tab-pane" id="examples-Default-ontologyApiCryptocurrenciesByNamePost-0-python">
                               <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
 import time
 import swagger_client
@@ -977,14 +1000,14 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = swagger_client.DefaultApi()
 body = {
-  "value" : "{\n    \"ids\": [\"1\"]\n}"
-} # Api_cryptocurrenciesById_body |  (optional)
+  "value" : "{\n    \"coins\": [\"bitcoin\", \"ethereum\", \"dogecoin\"]\n}"
+} # Api_cryptocurrenciesByName_body |  (optional)
 
 try: 
-    api_response = api_instance.ontology_api_cryptocurrencies_by_id_post(body=body)
+    api_response = api_instance.ontology_api_cryptocurrencies_by_name_post(body=body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling DefaultApi->ontologyApiCryptocurrenciesByIdPost: %s\n" % e)</code></pre>
+    print("Exception when calling DefaultApi->ontologyApiCryptocurrenciesByNamePost: %s\n" % e)</code></pre>
                             </div>
                           </div>
 
@@ -1008,11 +1031,11 @@ except ApiException as e:
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/api_cryptocurrenciesById_body"
+        "$ref" : "#/components/schemas/api_cryptocurrenciesByName_body"
       },
       "examples" : {
         "0" : {
-          "value" : "{\n    \"ids\": [\"1\"]\n}"
+          "value" : "{\n    \"coins\": [\"bitcoin\", \"ethereum\", \"dogecoin\"]\n}"
         }
       }
     }
@@ -1030,12 +1053,12 @@ except ApiException as e:
                                   }
                                 
                                   var view = new JSONSchemaView(schema,2,{isBodyParam: true});
-                                  var result = $('#d2e199_ontologyApiCryptocurrenciesByIdPost_body');
+                                  var result = $('#d2e199_ontologyApiCryptocurrenciesByNamePost_body');
                                   result.empty();
                                   result.append(view.render());
                                 });
                                 </script>
-                                <div id="d2e199_ontologyApiCryptocurrenciesByIdPost_body"></div>
+                                <div id="d2e199_ontologyApiCryptocurrenciesByNamePost_body"></div>
                                 </td>
                                 </tr>
                             </table>
@@ -1047,333 +1070,33 @@ except ApiException as e:
 
                             <ul class="nav nav-tabs nav-tabs-examples" >
                                 <li class="active">
-                                  <a data-toggle="tab" href="#responses-ontologyApiCryptocurrenciesByIdPost-200-schema">Schema</a>
+                                  <a data-toggle="tab" href="#responses-ontologyApiCryptocurrenciesByNamePost-200-schema">Schema</a>
                                 </li>
 
                             </ul>
 
                             <div class="tab-content" style='margin-bottom: 10px;'>
-                                <div class="tab-pane active" id="responses-ontologyApiCryptocurrenciesByIdPost-200-schema">
-                                  <div id='responses-ontologyApiCryptocurrenciesByIdPost-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                <div class="tab-pane active" id="responses-ontologyApiCryptocurrenciesByNamePost-200-schema">
+                                  <div id='responses-ontologyApiCryptocurrenciesByNamePost-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
                                     <script>
                                       $(document).ready(function() {
-                                        var schemaWrapper = ;
-                                        var schema = schemaWrapper.content["application/json"].schema;
-                                        if (schema.$ref != null) {
-                                          schema = defsParser.$refs.get(schema.$ref);
-                                        } else {
-                                          schemaWrapper.components = {};
-                                          schemaWrapper.components.schemas = Object.assign({}, defs);
-                                          $RefParser.dereference(schemaWrapper).catch(function(err) {
-                                            console.log(err);
-                                          });
-                                        }
-
-                                        //console.log(JSON.stringify(schema));
-                                        var view = new JSONSchemaView(schema, 3);
-                                        $('#responses-ontologyApiCryptocurrenciesByIdPost-200-schema-data').val(stringify(schema));
-                                        var result = $('#responses-ontologyApiCryptocurrenciesByIdPost-200-schema-200');
-                                        result.empty();
-                                        result.append(view.render());
-                                      });
-                                    </script>
-                                  </div>
-                                  <input id='responses-ontologyApiCryptocurrenciesByIdPost-200-schema-data' type='hidden' value=''></input>
-                                </div>
-                            </div>
-
-                        </article>
-                      </div>
-                      <hr>
-                    <div id="api-Default-ontologyApiCryptocurrenciesByYearsPost">
-                      <article id="api-Default-ontologyApiCryptocurrenciesByYearsPost-0" data-group="User" data-name="ontologyApiCryptocurrenciesByYearsPost" data-version="0">
-                        <div class="pull-left">
-                          <h1>ontologyApiCryptocurrenciesByYearsPost</h1>
-                          <p></p>
-                        </div>
-                        <div class="pull-right"></div>
-                        <div class="clearfix"></div>
-                        <p></p>
-                        <p class="marked">Auto generated using Swagger Inspector</p>
-                        <p></p>
-                        <br />
-                        <pre class="prettyprint language-html prettyprinted" data-type="post"><code><span class="pln">/ontology/api/cryptocurrenciesByYears</span></code></pre>
-                        <p>
-                          <h3>Usage and SDK Samples</h3>
-                        </p>
-                        <ul class="nav nav-tabs nav-tabs-examples">
-                          <li class="active"><a href="#examples-Default-ontologyApiCryptocurrenciesByYearsPost-0-curl">Curl</a></li>
-                          <li class=""><a href="#examples-Default-ontologyApiCryptocurrenciesByYearsPost-0-java">Java</a></li>
-                          <li class=""><a href="#examples-Default-ontologyApiCryptocurrenciesByYearsPost-0-android">Android</a></li>
-                          <!--<li class=""><a href="#examples-Default-ontologyApiCryptocurrenciesByYearsPost-0-groovy">Groovy</a></li>-->
-                          <li class=""><a href="#examples-Default-ontologyApiCryptocurrenciesByYearsPost-0-objc">Obj-C</a></li>
-                          <li class=""><a href="#examples-Default-ontologyApiCryptocurrenciesByYearsPost-0-javascript">JavaScript</a></li>
-                          <!--<li class=""><a href="#examples-Default-ontologyApiCryptocurrenciesByYearsPost-0-angular">Angular</a></li>-->
-                          <li class=""><a href="#examples-Default-ontologyApiCryptocurrenciesByYearsPost-0-csharp">C#</a></li>
-                          <li class=""><a href="#examples-Default-ontologyApiCryptocurrenciesByYearsPost-0-php">PHP</a></li>
-                          <li class=""><a href="#examples-Default-ontologyApiCryptocurrenciesByYearsPost-0-perl">Perl</a></li>
-                          <li class=""><a href="#examples-Default-ontologyApiCryptocurrenciesByYearsPost-0-python">Python</a></li>
-                        </ul>
-
-                        <div class="tab-content">
-                          <div class="tab-pane active" id="examples-Default-ontologyApiCryptocurrenciesByYearsPost-0-curl">
-                           <pre class="prettyprint"><code class="language-bsh">curl -X POST\
--H "Accept: application/json"\
--H "Content-Type: application/json"\
-"http://127.0.0.1:5001/ontology/api/cryptocurrenciesByYears"</code></pre>
-                          </div>
-                          <div class="tab-pane" id="examples-Default-ontologyApiCryptocurrenciesByYearsPost-0-java">
-                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
-import io.swagger.client.auth.*;
-import io.swagger.client.model.*;
-import io.swagger.client.api.DefaultApi;
-
-import java.io.File;
-import java.util.*;
-
-public class DefaultApiExample {
-
-    public static void main(String[] args) {
-        
-        DefaultApi apiInstance = new DefaultApi();
-        Api_cryptocurrenciesByYears_body body = {
-  "value" : "{\n    \"period\": \n    {\n        \"from_year\": 2015\n    }\n}"
-}; // Api_cryptocurrenciesByYears_body | 
-        try {
-            Object result = apiInstance.ontologyApiCryptocurrenciesByYearsPost(body);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#ontologyApiCryptocurrenciesByYearsPost");
-            e.printStackTrace();
-        }
-    }
-}</code></pre>
-                          </div>
-
-                          <div class="tab-pane" id="examples-Default-ontologyApiCryptocurrenciesByYearsPost-0-android">
-                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.DefaultApi;
-
-public class DefaultApiExample {
-
-    public static void main(String[] args) {
-        DefaultApi apiInstance = new DefaultApi();
-        Api_cryptocurrenciesByYears_body body = {
-  "value" : "{\n    \"period\": \n    {\n        \"from_year\": 2015\n    }\n}"
-}; // Api_cryptocurrenciesByYears_body | 
-        try {
-            Object result = apiInstance.ontologyApiCryptocurrenciesByYearsPost(body);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#ontologyApiCryptocurrenciesByYearsPost");
-            e.printStackTrace();
-        }
-    }
-}</code></pre>
-                          </div>
-  <!--
-  <div class="tab-pane" id="examples-Default-ontologyApiCryptocurrenciesByYearsPost-0-groovy">
-  <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
-  </div> -->
-                            <div class="tab-pane" id="examples-Default-ontologyApiCryptocurrenciesByYearsPost-0-objc">
-                              <pre class="prettyprint"><code class="language-cpp">Api_cryptocurrenciesByYears_body *body = {
-  "value" : "{\n    \"period\": \n    {\n        \"from_year\": 2015\n    }\n}"
-}; //  (optional)
-
-DefaultApi *apiInstance = [[DefaultApi alloc] init];
-
-[apiInstance ontologyApiCryptocurrenciesByYearsPostWith:body
-              completionHandler: ^(Object output, NSError* error) {
-                            if (output) {
-                                NSLog(@"%@", output);
-                            }
-                            if (error) {
-                                NSLog(@"Error: %@", error);
-                            }
-                        }];
-</code></pre>
-                            </div>
-
-                            <div class="tab-pane" id="examples-Default-ontologyApiCryptocurrenciesByYearsPost-0-javascript">
-                              <pre class="prettyprint"><code class="language-js">var CrykSemanticApi = require('cryk_semantic_api');
-
-var api = new CrykSemanticApi.DefaultApi()
-var opts = { 
-  'body': {
-  "value" : "{\n    \"period\": \n    {\n        \"from_year\": 2015\n    }\n}"
-} // {{Api_cryptocurrenciesByYears_body}} 
-};
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-api.ontologyApiCryptocurrenciesByYearsPost(opts, callback);
-</code></pre>
-                            </div>
-
-                            <!--<div class="tab-pane" id="examples-Default-ontologyApiCryptocurrenciesByYearsPost-0-angular">
-              <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
-            </div>-->
-                            <div class="tab-pane" id="examples-Default-ontologyApiCryptocurrenciesByYearsPost-0-csharp">
-                              <pre class="prettyprint"><code class="language-cs">using System;
-using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
-
-namespace Example
-{
-    public class ontologyApiCryptocurrenciesByYearsPostExample
-    {
-        public void main()
-        {
-
-            var apiInstance = new DefaultApi();
-            var body = new Api_cryptocurrenciesByYears_body(); // Api_cryptocurrenciesByYears_body |  (optional) 
-
-            try
-            {
-                Object result = apiInstance.ontologyApiCryptocurrenciesByYearsPost(body);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling DefaultApi.ontologyApiCryptocurrenciesByYearsPost: " + e.Message );
-            }
-        }
-    }
-}
-</code></pre>
-                            </div>
-
-                            <div class="tab-pane" id="examples-Default-ontologyApiCryptocurrenciesByYearsPost-0-php">
-                              <pre class="prettyprint"><code class="language-php"><&#63;php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Swagger\Client\ApiDefaultApi();
-$body = {
-  "value" : "{\n    \"period\": \n    {\n        \"from_year\": 2015\n    }\n}"
-}; // Api_cryptocurrenciesByYears_body | 
-
-try {
-    $result = $api_instance->ontologyApiCryptocurrenciesByYearsPost($body);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->ontologyApiCryptocurrenciesByYearsPost: ', $e->getMessage(), PHP_EOL;
-}
-?></code></pre>
-                            </div>
-
-                            <div class="tab-pane" id="examples-Default-ontologyApiCryptocurrenciesByYearsPost-0-perl">
-                              <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
-use WWW::SwaggerClient::Configuration;
-use WWW::SwaggerClient::DefaultApi;
-
-my $api_instance = WWW::SwaggerClient::DefaultApi->new();
-my $body = WWW::SwaggerClient::Object::Api_cryptocurrenciesByYears_body->new(); # Api_cryptocurrenciesByYears_body | 
-
-eval { 
-    my $result = $api_instance->ontologyApiCryptocurrenciesByYearsPost(body => $body);
-    print Dumper($result);
-};
-if ($@) {
-    warn "Exception when calling DefaultApi->ontologyApiCryptocurrenciesByYearsPost: $@\n";
-}</code></pre>
-                            </div>
-
-                            <div class="tab-pane" id="examples-Default-ontologyApiCryptocurrenciesByYearsPost-0-python">
-                              <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
-import time
-import swagger_client
-from swagger_client.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-api_instance = swagger_client.DefaultApi()
-body = {
-  "value" : "{\n    \"period\": \n    {\n        \"from_year\": 2015\n    }\n}"
-} # Api_cryptocurrenciesByYears_body |  (optional)
-
-try: 
-    api_response = api_instance.ontology_api_cryptocurrencies_by_years_post(body=body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling DefaultApi->ontologyApiCryptocurrenciesByYearsPost: %s\n" % e)</code></pre>
-                            </div>
-                          </div>
-
-                          <h2>Parameters</h2>
-
-
-
-                            <div class="methodsubtabletitle">Body parameters</div>
-                            <table id="methodsubtable">
-                              <tr>
-                                <th width="150px">Name</th>
-                                <th>Description</th>
-                              </tr>
-                                <tr><td style="width:150px;">body </td>
-                                <td>
-                                
-                                
-                                <script>
-                                $(document).ready(function() {
-                                  var schemaWrapper = {
+                                        var schemaWrapper = {
+  "description" : "Auto generated using Swagger Inspector",
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/api_cryptocurrenciesByYears_body"
+        "type" : "object",
+        "properties" : { },
+        "x-content-type" : "application/json"
       },
       "examples" : {
         "0" : {
-          "value" : "{\n    \"period\": \n    {\n        \"from_year\": 2015\n    }\n}"
+          "value" : "[{\"block_time\":\"\",\"crypto_id\":\"\",\"date_founded\":\"Thu, 23 Jan 2014 00:00:00 GMT\",\"description\":\"\",\"incept\":\"2014-01\",\"name\":\"Ethereum\",\"premine\":\"\",\"proof_of_stake\":\"\",\"proof_of_work\":\"http://purl.org/net/bel-epa/doacc#D195a7796-6815-48ac-b8f1-9d7e55a3ff5e\",\"protection_scheme\":\"http://purl.org/net/bel-epa/doacc#D451a49d8-c9e7-46e5-8b8d-bcbe16f75c24\",\"protocol\":\"http://purl.org/net/bel-epa/doacc#Db8ade99f-11f1-476b-ae77-03c005c1bb66\",\"retarget_time\":0,\"source\":\"\",\"symbol\":\"ETH\",\"total_coins\":\"\",\"website\":\"\"},{\"block_time\":\"\",\"crypto_id\":\"\",\"date_founded\":\"Sat, 03 Jan 2009 00:00:00 GMT\",\"description\":\"re-target every 2016 blocks, 25 coins per block, and 21 million total coins. Abbreviation: BTC Algorithm: SHA-256 Date Founded: 2009 Total Coins: 21 Million Confirm Per Transaction: Re-Target Time: Block Time: 10 Minutes Block Reward: 25 Coins Diff Adjustment 2,016 Blocks Website Source.\",\"incept\":\"2009-01\",\"name\":\"Bitcoin\",\"premine\":\"0\",\"proof_of_stake\":\"\",\"proof_of_work\":\"http://purl.org/net/bel-epa/doacc#D0441786b-85a1-45a6-a50d-1a9b80ec7b94\",\"protection_scheme\":\"http://purl.org/net/bel-epa/doacc#D451a49d8-c9e7-46e5-8b8d-bcbe16f75c24\",\"protocol\":\"http://purl.org/net/bel-epa/doacc#Db8ade99f-11f1-476b-ae77-03c005c1bb66\",\"retarget_time\":0,\"source\":\"https://github.com/bitcoin/bitcoin\",\"symbol\":\"BTC\",\"total_coins\":\"21000000\",\"website\":\"\"},{\"block_time\":60,\"crypto_id\":\"\",\"date_founded\":\"Sun, 08 Dec 2013 00:00:00 GMT\",\"description\":\"re-target every 4 hours, variable block reward, and 100 billion total coins. A joke turned into quite a big market. Doge Coin - DogeCoin Abbreviation: DOGE Algorithm: SCRYPT Date Founded: 12/8/2013 Total Coins: 100 Billion Confirm Per Transaction: Re-Target Time: Block Time: 1 Minute Block Reward: 500,000 Coins Diff Adjustment.\",\"incept\":\"2013-12\",\"name\":\"Dogecoin\",\"premine\":\"\",\"proof_of_stake\":\"\",\"proof_of_work\":\"http://purl.org/net/bel-epa/doacc#D338257f8-402f-4c76-969b-6fc041d52e40\",\"protection_scheme\":\"http://purl.org/net/bel-epa/doacc#D451a49d8-c9e7-46e5-8b8d-bcbe16f75c24\",\"protocol\":\"http://purl.org/net/bel-epa/doacc#Db8ade99f-11f1-476b-ae77-03c005c1bb66\",\"retarget_time\":0,\"source\":\"https://github.com/dogecoin/dogecoin\",\"symbol\":\"DOGE\",\"total_coins\":\"100000000000\",\"website\":\"http://dogecoin.com/\"}]\n"
         }
       }
     }
   }
 };
-                                  var schema = schemaWrapper.content["application/json"].schema;
-                                  if (schema.$ref != null) {
-                                    schema = defsParser.$refs.get(schema.$ref);
-                                  } else {
-                                    schemaWrapper.components = {};
-                                    schemaWrapper.components.schemas = Object.assign({}, defs);
-                                    $RefParser.dereference(schemaWrapper).catch(function(err) {
-                                      console.log(err);
-                                    });
-                                  }
-                                
-                                  var view = new JSONSchemaView(schema,2,{isBodyParam: true});
-                                  var result = $('#d2e199_ontologyApiCryptocurrenciesByYearsPost_body');
-                                  result.empty();
-                                  result.append(view.render());
-                                });
-                                </script>
-                                <div id="d2e199_ontologyApiCryptocurrenciesByYearsPost_body"></div>
-                                </td>
-                                </tr>
-                            </table>
-
-
-
-                          <h2>Responses</h2>
-                            <h3> Status: 200 - Auto generated using Swagger Inspector </h3>
-
-                            <ul class="nav nav-tabs nav-tabs-examples" >
-                                <li class="active">
-                                  <a data-toggle="tab" href="#responses-ontologyApiCryptocurrenciesByYearsPost-200-schema">Schema</a>
-                                </li>
-
-                            </ul>
-
-                            <div class="tab-content" style='margin-bottom: 10px;'>
-                                <div class="tab-pane active" id="responses-ontologyApiCryptocurrenciesByYearsPost-200-schema">
-                                  <div id='responses-ontologyApiCryptocurrenciesByYearsPost-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
-                                    <script>
-                                      $(document).ready(function() {
-                                        var schemaWrapper = ;
                                         var schema = schemaWrapper.content["application/json"].schema;
                                         if (schema.$ref != null) {
                                           schema = defsParser.$refs.get(schema.$ref);
@@ -1387,14 +1110,14 @@ except ApiException as e:
 
                                         //console.log(JSON.stringify(schema));
                                         var view = new JSONSchemaView(schema, 3);
-                                        $('#responses-ontologyApiCryptocurrenciesByYearsPost-200-schema-data').val(stringify(schema));
-                                        var result = $('#responses-ontologyApiCryptocurrenciesByYearsPost-200-schema-200');
+                                        $('#responses-ontologyApiCryptocurrenciesByNamePost-200-schema-data').val(stringify(schema));
+                                        var result = $('#responses-ontologyApiCryptocurrenciesByNamePost-200-schema-200');
                                         result.empty();
                                         result.append(view.render());
                                       });
                                     </script>
                                   </div>
-                                  <input id='responses-ontologyApiCryptocurrenciesByYearsPost-200-schema-data' type='hidden' value=''></input>
+                                  <input id='responses-ontologyApiCryptocurrenciesByNamePost-200-schema-data' type='hidden' value=''></input>
                                 </div>
                             </div>
 
@@ -1434,8 +1157,7 @@ except ApiException as e:
                         <div class="tab-content">
                           <div class="tab-pane active" id="examples-Default-ontologyApiCryptocurrenciesGet-0-curl">
                            <pre class="prettyprint"><code class="language-bsh">curl -X GET\
--H "Accept: application/json"\
-"http://127.0.0.1:5001/ontology/api/cryptocurrencies"</code></pre>
+"http://127.0.0.1:5001/ontology/api/cryptocurrencies?protocol="</code></pre>
                           </div>
                           <div class="tab-pane" id="examples-Default-ontologyApiCryptocurrenciesGet-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
@@ -1451,9 +1173,9 @@ public class DefaultApiExample {
     public static void main(String[] args) {
         
         DefaultApi apiInstance = new DefaultApi();
+        String protocol = protocol_example; // String | 
         try {
-            Object result = apiInstance.ontologyApiCryptocurrenciesGet();
-            System.out.println(result);
+            apiInstance.ontologyApiCryptocurrenciesGet(protocol);
         } catch (ApiException e) {
             System.err.println("Exception when calling DefaultApi#ontologyApiCryptocurrenciesGet");
             e.printStackTrace();
@@ -1469,9 +1191,9 @@ public class DefaultApiExample {
 
     public static void main(String[] args) {
         DefaultApi apiInstance = new DefaultApi();
+        String protocol = protocol_example; // String | 
         try {
-            Object result = apiInstance.ontologyApiCryptocurrenciesGet();
-            System.out.println(result);
+            apiInstance.ontologyApiCryptocurrenciesGet(protocol);
         } catch (ApiException e) {
             System.err.println("Exception when calling DefaultApi#ontologyApiCryptocurrenciesGet");
             e.printStackTrace();
@@ -1484,14 +1206,12 @@ public class DefaultApiExample {
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
                             <div class="tab-pane" id="examples-Default-ontologyApiCryptocurrenciesGet-0-objc">
-                              <pre class="prettyprint"><code class="language-cpp">
+                              <pre class="prettyprint"><code class="language-cpp">String *protocol = protocol_example; //  (optional)
+
 DefaultApi *apiInstance = [[DefaultApi alloc] init];
 
-[apiInstance ontologyApiCryptocurrenciesGetWithCompletionHandler: 
-              ^(Object output, NSError* error) {
-                            if (output) {
-                                NSLog(@"%@", output);
-                            }
+[apiInstance ontologyApiCryptocurrenciesGetWith:protocol
+              completionHandler: ^(NSError* error) {
                             if (error) {
                                 NSLog(@"Error: %@", error);
                             }
@@ -1500,17 +1220,20 @@ DefaultApi *apiInstance = [[DefaultApi alloc] init];
                             </div>
 
                             <div class="tab-pane" id="examples-Default-ontologyApiCryptocurrenciesGet-0-javascript">
-                              <pre class="prettyprint"><code class="language-js">var CrykSemanticApi = require('cryk_semantic_api');
+                              <pre class="prettyprint"><code class="language-js">var DefaultTitle = require('default_title');
 
-var api = new CrykSemanticApi.DefaultApi()
+var api = new DefaultTitle.DefaultApi()
+var opts = { 
+  'protocol': protocol_example // {{String}} 
+};
 var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully. Returned data: ' + data);
+    console.log('API called successfully.');
   }
 };
-api.ontologyApiCryptocurrenciesGet(callback);
+api.ontologyApiCryptocurrenciesGet(opts, callback);
 </code></pre>
                             </div>
 
@@ -1532,11 +1255,11 @@ namespace Example
         {
 
             var apiInstance = new DefaultApi();
+            var protocol = protocol_example;  // String |  (optional) 
 
             try
             {
-                Object result = apiInstance.ontologyApiCryptocurrenciesGet();
-                Debug.WriteLine(result);
+                apiInstance.ontologyApiCryptocurrenciesGet(protocol);
             }
             catch (Exception e)
             {
@@ -1553,10 +1276,10 @@ namespace Example
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\ApiDefaultApi();
+$protocol = protocol_example; // String | 
 
 try {
-    $result = $api_instance->ontologyApiCryptocurrenciesGet();
-    print_r($result);
+    $api_instance->ontologyApiCryptocurrenciesGet($protocol);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->ontologyApiCryptocurrenciesGet: ', $e->getMessage(), PHP_EOL;
 }
@@ -1569,10 +1292,10 @@ use WWW::SwaggerClient::Configuration;
 use WWW::SwaggerClient::DefaultApi;
 
 my $api_instance = WWW::SwaggerClient::DefaultApi->new();
+my $protocol = protocol_example; # String | 
 
 eval { 
-    my $result = $api_instance->ontologyApiCryptocurrenciesGet();
-    print Dumper($result);
+    $api_instance->ontologyApiCryptocurrenciesGet(protocol => $protocol);
 };
 if ($@) {
     warn "Exception when calling DefaultApi->ontologyApiCryptocurrenciesGet: $@\n";
@@ -1588,10 +1311,10 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.DefaultApi()
+protocol = protocol_example # String |  (optional)
 
 try: 
-    api_response = api_instance.ontology_api_cryptocurrencies_get()
-    pprint(api_response)
+    api_instance.ontology_api_cryptocurrencies_get(protocol=protocol)
 except ApiException as e:
     print("Exception when calling DefaultApi->ontologyApiCryptocurrenciesGet: %s\n" % e)</code></pre>
                             </div>
@@ -1603,54 +1326,46 @@ except ApiException as e:
 
 
 
+                            <div class="methodsubtabletitle">Query parameters</div>
+                            <table id="methodsubtable">
+                              <tr>
+                                <th width="150px">Name</th>
+                                <th>Description</th>
+                              </tr>
+                                <tr><td style="width:150px;">protocol</td>
+                                <td>
+                                
+                                
+                                    <div id="d2e199_ontologyApiCryptocurrenciesGet_protocol">
+                                        <div class="json-schema-view">
+                                            <div class="primitive">
+                                                <span class="type">
+                                                    String
+                                                </span>
+                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                </tr>
+                            </table>
 
                           <h2>Responses</h2>
                             <h3> Status: 200 - Auto generated using Swagger Inspector </h3>
 
                             <ul class="nav nav-tabs nav-tabs-examples" >
-                                <li class="active">
-                                  <a data-toggle="tab" href="#responses-ontologyApiCryptocurrenciesGet-200-schema">Schema</a>
-                                </li>
-
                             </ul>
 
                             <div class="tab-content" style='margin-bottom: 10px;'>
-                                <div class="tab-pane active" id="responses-ontologyApiCryptocurrenciesGet-200-schema">
-                                  <div id='responses-ontologyApiCryptocurrenciesGet-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
-                                    <script>
-                                      $(document).ready(function() {
-                                        var schemaWrapper = ;
-                                        var schema = schemaWrapper.content["application/json"].schema;
-                                        if (schema.$ref != null) {
-                                          schema = defsParser.$refs.get(schema.$ref);
-                                        } else {
-                                          schemaWrapper.components = {};
-                                          schemaWrapper.components.schemas = Object.assign({}, defs);
-                                          $RefParser.dereference(schemaWrapper).catch(function(err) {
-                                            console.log(err);
-                                          });
-                                        }
-
-                                        //console.log(JSON.stringify(schema));
-                                        var view = new JSONSchemaView(schema, 3);
-                                        $('#responses-ontologyApiCryptocurrenciesGet-200-schema-data').val(stringify(schema));
-                                        var result = $('#responses-ontologyApiCryptocurrenciesGet-200-schema-200');
-                                        result.empty();
-                                        result.append(view.render());
-                                      });
-                                    </script>
-                                  </div>
-                                  <input id='responses-ontologyApiCryptocurrenciesGet-200-schema-data' type='hidden' value=''></input>
-                                </div>
                             </div>
 
                         </article>
                       </div>
                       <hr>
-                    <div id="api-Default-ontologyApiCryptocurrenciesIdGet">
-                      <article id="api-Default-ontologyApiCryptocurrenciesIdGet-0" data-group="User" data-name="ontologyApiCryptocurrenciesIdGet" data-version="0">
+                    <div id="api-Default-ontologyApiCryptocurrencyGet">
+                      <article id="api-Default-ontologyApiCryptocurrencyGet-0" data-group="User" data-name="ontologyApiCryptocurrencyGet" data-version="0">
                         <div class="pull-left">
-                          <h1>ontologyApiCryptocurrenciesIdGet</h1>
+                          <h1>ontologyApiCryptocurrencyGet</h1>
                           <p></p>
                         </div>
                         <div class="pull-right"></div>
@@ -1659,31 +1374,31 @@ except ApiException as e:
                         <p class="marked">Auto generated using Swagger Inspector</p>
                         <p></p>
                         <br />
-                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/ontology/api/cryptocurrencies/{id}</span></code></pre>
+                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/ontology/api/cryptocurrency</span></code></pre>
                         <p>
                           <h3>Usage and SDK Samples</h3>
                         </p>
                         <ul class="nav nav-tabs nav-tabs-examples">
-                          <li class="active"><a href="#examples-Default-ontologyApiCryptocurrenciesIdGet-0-curl">Curl</a></li>
-                          <li class=""><a href="#examples-Default-ontologyApiCryptocurrenciesIdGet-0-java">Java</a></li>
-                          <li class=""><a href="#examples-Default-ontologyApiCryptocurrenciesIdGet-0-android">Android</a></li>
-                          <!--<li class=""><a href="#examples-Default-ontologyApiCryptocurrenciesIdGet-0-groovy">Groovy</a></li>-->
-                          <li class=""><a href="#examples-Default-ontologyApiCryptocurrenciesIdGet-0-objc">Obj-C</a></li>
-                          <li class=""><a href="#examples-Default-ontologyApiCryptocurrenciesIdGet-0-javascript">JavaScript</a></li>
-                          <!--<li class=""><a href="#examples-Default-ontologyApiCryptocurrenciesIdGet-0-angular">Angular</a></li>-->
-                          <li class=""><a href="#examples-Default-ontologyApiCryptocurrenciesIdGet-0-csharp">C#</a></li>
-                          <li class=""><a href="#examples-Default-ontologyApiCryptocurrenciesIdGet-0-php">PHP</a></li>
-                          <li class=""><a href="#examples-Default-ontologyApiCryptocurrenciesIdGet-0-perl">Perl</a></li>
-                          <li class=""><a href="#examples-Default-ontologyApiCryptocurrenciesIdGet-0-python">Python</a></li>
+                          <li class="active"><a href="#examples-Default-ontologyApiCryptocurrencyGet-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Default-ontologyApiCryptocurrencyGet-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Default-ontologyApiCryptocurrencyGet-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Default-ontologyApiCryptocurrencyGet-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Default-ontologyApiCryptocurrencyGet-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Default-ontologyApiCryptocurrencyGet-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Default-ontologyApiCryptocurrencyGet-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Default-ontologyApiCryptocurrencyGet-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Default-ontologyApiCryptocurrencyGet-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Default-ontologyApiCryptocurrencyGet-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Default-ontologyApiCryptocurrencyGet-0-python">Python</a></li>
                         </ul>
 
                         <div class="tab-content">
-                          <div class="tab-pane active" id="examples-Default-ontologyApiCryptocurrenciesIdGet-0-curl">
+                          <div class="tab-pane active" id="examples-Default-ontologyApiCryptocurrencyGet-0-curl">
                            <pre class="prettyprint"><code class="language-bsh">curl -X GET\
 -H "Accept: application/json"\
-"http://127.0.0.1:5001/ontology/api/cryptocurrencies/{id}"</code></pre>
+"http://127.0.0.1:5001/ontology/api/cryptocurrency?name="</code></pre>
                           </div>
-                          <div class="tab-pane" id="examples-Default-ontologyApiCryptocurrenciesIdGet-0-java">
+                          <div class="tab-pane" id="examples-Default-ontologyApiCryptocurrencyGet-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
 import io.swagger.client.auth.*;
 import io.swagger.client.model.*;
@@ -1697,46 +1412,46 @@ public class DefaultApiExample {
     public static void main(String[] args) {
         
         DefaultApi apiInstance = new DefaultApi();
-        String id = id_example; // String | Id of the cryptocurrency
+        String name = name_example; // String | 
         try {
-            Object result = apiInstance.ontologyApiCryptocurrenciesIdGet(id);
+            Object result = apiInstance.ontologyApiCryptocurrencyGet(name);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#ontologyApiCryptocurrenciesIdGet");
+            System.err.println("Exception when calling DefaultApi#ontologyApiCryptocurrencyGet");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
 
-                          <div class="tab-pane" id="examples-Default-ontologyApiCryptocurrenciesIdGet-0-android">
+                          <div class="tab-pane" id="examples-Default-ontologyApiCryptocurrencyGet-0-android">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.DefaultApi;
 
 public class DefaultApiExample {
 
     public static void main(String[] args) {
         DefaultApi apiInstance = new DefaultApi();
-        String id = id_example; // String | Id of the cryptocurrency
+        String name = name_example; // String | 
         try {
-            Object result = apiInstance.ontologyApiCryptocurrenciesIdGet(id);
+            Object result = apiInstance.ontologyApiCryptocurrencyGet(name);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#ontologyApiCryptocurrenciesIdGet");
+            System.err.println("Exception when calling DefaultApi#ontologyApiCryptocurrencyGet");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
   <!--
-  <div class="tab-pane" id="examples-Default-ontologyApiCryptocurrenciesIdGet-0-groovy">
+  <div class="tab-pane" id="examples-Default-ontologyApiCryptocurrencyGet-0-groovy">
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
-                            <div class="tab-pane" id="examples-Default-ontologyApiCryptocurrenciesIdGet-0-objc">
-                              <pre class="prettyprint"><code class="language-cpp">String *id = id_example; // Id of the cryptocurrency
+                            <div class="tab-pane" id="examples-Default-ontologyApiCryptocurrencyGet-0-objc">
+                              <pre class="prettyprint"><code class="language-cpp">String *name = name_example; //  (optional)
 
 DefaultApi *apiInstance = [[DefaultApi alloc] init];
 
-[apiInstance ontologyApiCryptocurrenciesIdGetWith:id
+[apiInstance ontologyApiCryptocurrencyGetWith:name
               completionHandler: ^(Object output, NSError* error) {
                             if (output) {
                                 NSLog(@"%@", output);
@@ -1748,12 +1463,13 @@ DefaultApi *apiInstance = [[DefaultApi alloc] init];
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-ontologyApiCryptocurrenciesIdGet-0-javascript">
-                              <pre class="prettyprint"><code class="language-js">var CrykSemanticApi = require('cryk_semantic_api');
+                            <div class="tab-pane" id="examples-Default-ontologyApiCryptocurrencyGet-0-javascript">
+                              <pre class="prettyprint"><code class="language-js">var DefaultTitle = require('default_title');
 
-var api = new CrykSemanticApi.DefaultApi()
-var id = id_example; // {{String}} Id of the cryptocurrency
-
+var api = new DefaultTitle.DefaultApi()
+var opts = { 
+  'name': name_example // {{String}} 
+};
 var callback = function(error, data, response) {
   if (error) {
     console.error(error);
@@ -1761,14 +1477,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.ontologyApiCryptocurrenciesIdGet(id, callback);
+api.ontologyApiCryptocurrencyGet(opts, callback);
 </code></pre>
                             </div>
 
-                            <!--<div class="tab-pane" id="examples-Default-ontologyApiCryptocurrenciesIdGet-0-angular">
+                            <!--<div class="tab-pane" id="examples-Default-ontologyApiCryptocurrencyGet-0-angular">
               <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
             </div>-->
-                            <div class="tab-pane" id="examples-Default-ontologyApiCryptocurrenciesIdGet-0-csharp">
+                            <div class="tab-pane" id="examples-Default-ontologyApiCryptocurrencyGet-0-csharp">
                               <pre class="prettyprint"><code class="language-cs">using System;
 using System.Diagnostics;
 using IO.Swagger.Api;
@@ -1777,22 +1493,22 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class ontologyApiCryptocurrenciesIdGetExample
+    public class ontologyApiCryptocurrencyGetExample
     {
         public void main()
         {
 
             var apiInstance = new DefaultApi();
-            var id = id_example;  // String | Id of the cryptocurrency
+            var name = name_example;  // String |  (optional) 
 
             try
             {
-                Object result = apiInstance.ontologyApiCryptocurrenciesIdGet(id);
+                Object result = apiInstance.ontologyApiCryptocurrencyGet(name);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling DefaultApi.ontologyApiCryptocurrenciesIdGet: " + e.Message );
+                Debug.Print("Exception when calling DefaultApi.ontologyApiCryptocurrencyGet: " + e.Message );
             }
         }
     }
@@ -1800,40 +1516,40 @@ namespace Example
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-ontologyApiCryptocurrenciesIdGet-0-php">
+                            <div class="tab-pane" id="examples-Default-ontologyApiCryptocurrencyGet-0-php">
                               <pre class="prettyprint"><code class="language-php"><&#63;php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\ApiDefaultApi();
-$id = id_example; // String | Id of the cryptocurrency
+$name = name_example; // String | 
 
 try {
-    $result = $api_instance->ontologyApiCryptocurrenciesIdGet($id);
+    $result = $api_instance->ontologyApiCryptocurrencyGet($name);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->ontologyApiCryptocurrenciesIdGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DefaultApi->ontologyApiCryptocurrencyGet: ', $e->getMessage(), PHP_EOL;
 }
 ?></code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-ontologyApiCryptocurrenciesIdGet-0-perl">
+                            <div class="tab-pane" id="examples-Default-ontologyApiCryptocurrencyGet-0-perl">
                               <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
 use WWW::SwaggerClient::Configuration;
 use WWW::SwaggerClient::DefaultApi;
 
 my $api_instance = WWW::SwaggerClient::DefaultApi->new();
-my $id = id_example; # String | Id of the cryptocurrency
+my $name = name_example; # String | 
 
 eval { 
-    my $result = $api_instance->ontologyApiCryptocurrenciesIdGet(id => $id);
+    my $result = $api_instance->ontologyApiCryptocurrencyGet(name => $name);
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling DefaultApi->ontologyApiCryptocurrenciesIdGet: $@\n";
+    warn "Exception when calling DefaultApi->ontologyApiCryptocurrencyGet: $@\n";
 }</code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-ontologyApiCryptocurrenciesIdGet-0-python">
+                            <div class="tab-pane" id="examples-Default-ontologyApiCryptocurrencyGet-0-python">
                               <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
 import time
 import swagger_client
@@ -1842,68 +1558,78 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.DefaultApi()
-id = id_example # String | Id of the cryptocurrency
+name = name_example # String |  (optional)
 
 try: 
-    api_response = api_instance.ontology_api_cryptocurrencies_id_get(id)
+    api_response = api_instance.ontology_api_cryptocurrency_get(name=name)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling DefaultApi->ontologyApiCryptocurrenciesIdGet: %s\n" % e)</code></pre>
+    print("Exception when calling DefaultApi->ontologyApiCryptocurrencyGet: %s\n" % e)</code></pre>
                             </div>
                           </div>
 
                           <h2>Parameters</h2>
 
-                            <div class="methodsubtabletitle">Path parameters</div>
+
+
+
+
+                            <div class="methodsubtabletitle">Query parameters</div>
                             <table id="methodsubtable">
-                                <tr>
-                                  <th width="150px">Name</th>
-                                  <th>Description</th>
+                              <tr>
+                                <th width="150px">Name</th>
+                                <th>Description</th>
+                              </tr>
+                                <tr><td style="width:150px;">name</td>
+                                <td>
+                                
+                                
+                                    <div id="d2e199_ontologyApiCryptocurrencyGet_name">
+                                        <div class="json-schema-view">
+                                            <div class="primitive">
+                                                <span class="type">
+                                                    String
+                                                </span>
+                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
                                 </tr>
-                                  <tr><td style="width:150px;">id*</td>
-                                  <td>
-                                  
-                                  
-                                      <div id="d2e199_ontologyApiCryptocurrenciesIdGet_id">
-                                          <div class="json-schema-view">
-                                              <div class="primitive">
-                                                  <span class="type">
-                                                      String
-                                                  </span>
-                                  
-                                                      <div class="inner description">
-                                                          Id of the cryptocurrency
-                                                      </div>
-                                              </div>
-                                                  <div class="inner required">
-                                                      Required
-                                                  </div>
-                                          </div>
-                                      </div>
-                                  </td>
-                                  </tr>
                             </table>
-
-
-
-
 
                           <h2>Responses</h2>
                             <h3> Status: 200 - Auto generated using Swagger Inspector </h3>
 
                             <ul class="nav nav-tabs nav-tabs-examples" >
                                 <li class="active">
-                                  <a data-toggle="tab" href="#responses-ontologyApiCryptocurrenciesIdGet-200-schema">Schema</a>
+                                  <a data-toggle="tab" href="#responses-ontologyApiCryptocurrencyGet-200-schema">Schema</a>
                                 </li>
 
                             </ul>
 
                             <div class="tab-content" style='margin-bottom: 10px;'>
-                                <div class="tab-pane active" id="responses-ontologyApiCryptocurrenciesIdGet-200-schema">
-                                  <div id='responses-ontologyApiCryptocurrenciesIdGet-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                <div class="tab-pane active" id="responses-ontologyApiCryptocurrencyGet-200-schema">
+                                  <div id='responses-ontologyApiCryptocurrencyGet-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
                                     <script>
                                       $(document).ready(function() {
-                                        var schemaWrapper = ;
+                                        var schemaWrapper = {
+  "description" : "Auto generated using Swagger Inspector",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "type" : "object",
+        "properties" : { },
+        "x-content-type" : "application/json"
+      },
+      "examples" : {
+        "0" : {
+          "value" : "[{\"block_time\":\"\",\"crypto_id\":\"\",\"date_founded\":\"Sat, 03 Jan 2009 00:00:00 GMT\",\"description\":\"re-target every 2016 blocks, 25 coins per block, and 21 million total coins. Abbreviation: BTC Algorithm: SHA-256 Date Founded: 2009 Total Coins: 21 Million Confirm Per Transaction: Re-Target Time: Block Time: 10 Minutes Block Reward: 25 Coins Diff Adjustment 2,016 Blocks Website Source.\",\"incept\":\"2009-01\",\"name\":\"Bitcoin\",\"premine\":\"0\",\"proof_of_stake\":\"\",\"proof_of_work\":\"http://purl.org/net/bel-epa/doacc#D0441786b-85a1-45a6-a50d-1a9b80ec7b94\",\"protection_scheme\":\"http://purl.org/net/bel-epa/doacc#D451a49d8-c9e7-46e5-8b8d-bcbe16f75c24\",\"protocol\":\"http://purl.org/net/bel-epa/doacc#Db8ade99f-11f1-476b-ae77-03c005c1bb66\",\"retarget_time\":0,\"source\":\"https://github.com/bitcoin/bitcoin\",\"symbol\":\"BTC\",\"total_coins\":\"21000000\",\"website\":\"\"}]\n"
+        }
+      }
+    }
+  }
+};
                                         var schema = schemaWrapper.content["application/json"].schema;
                                         if (schema.$ref != null) {
                                           schema = defsParser.$refs.get(schema.$ref);
@@ -1917,24 +1643,24 @@ except ApiException as e:
 
                                         //console.log(JSON.stringify(schema));
                                         var view = new JSONSchemaView(schema, 3);
-                                        $('#responses-ontologyApiCryptocurrenciesIdGet-200-schema-data').val(stringify(schema));
-                                        var result = $('#responses-ontologyApiCryptocurrenciesIdGet-200-schema-200');
+                                        $('#responses-ontologyApiCryptocurrencyGet-200-schema-data').val(stringify(schema));
+                                        var result = $('#responses-ontologyApiCryptocurrencyGet-200-schema-200');
                                         result.empty();
                                         result.append(view.render());
                                       });
                                     </script>
                                   </div>
-                                  <input id='responses-ontologyApiCryptocurrenciesIdGet-200-schema-data' type='hidden' value=''></input>
+                                  <input id='responses-ontologyApiCryptocurrencyGet-200-schema-data' type='hidden' value=''></input>
                                 </div>
                             </div>
 
                         </article>
                       </div>
                       <hr>
-                    <div id="api-Default-ontologyApiProtocolCryptocurrenciesGet">
-                      <article id="api-Default-ontologyApiProtocolCryptocurrenciesGet-0" data-group="User" data-name="ontologyApiProtocolCryptocurrenciesGet" data-version="0">
+                    <div id="api-Default-ontologyApiHtmlRdfaGetCryptocurrenciesByNamePost">
+                      <article id="api-Default-ontologyApiHtmlRdfaGetCryptocurrenciesByNamePost-0" data-group="User" data-name="ontologyApiHtmlRdfaGetCryptocurrenciesByNamePost" data-version="0">
                         <div class="pull-left">
-                          <h1>ontologyApiProtocolCryptocurrenciesGet</h1>
+                          <h1>ontologyApiHtmlRdfaGetCryptocurrenciesByNamePost</h1>
                           <p></p>
                         </div>
                         <div class="pull-right"></div>
@@ -1943,31 +1669,32 @@ except ApiException as e:
                         <p class="marked">Auto generated using Swagger Inspector</p>
                         <p></p>
                         <br />
-                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/ontology/api/{protocol}/cryptocurrencies</span></code></pre>
+                        <pre class="prettyprint language-html prettyprinted" data-type="post"><code><span class="pln">/ontology/api/html-rdfa/getCryptocurrenciesByName</span></code></pre>
                         <p>
                           <h3>Usage and SDK Samples</h3>
                         </p>
                         <ul class="nav nav-tabs nav-tabs-examples">
-                          <li class="active"><a href="#examples-Default-ontologyApiProtocolCryptocurrenciesGet-0-curl">Curl</a></li>
-                          <li class=""><a href="#examples-Default-ontologyApiProtocolCryptocurrenciesGet-0-java">Java</a></li>
-                          <li class=""><a href="#examples-Default-ontologyApiProtocolCryptocurrenciesGet-0-android">Android</a></li>
-                          <!--<li class=""><a href="#examples-Default-ontologyApiProtocolCryptocurrenciesGet-0-groovy">Groovy</a></li>-->
-                          <li class=""><a href="#examples-Default-ontologyApiProtocolCryptocurrenciesGet-0-objc">Obj-C</a></li>
-                          <li class=""><a href="#examples-Default-ontologyApiProtocolCryptocurrenciesGet-0-javascript">JavaScript</a></li>
-                          <!--<li class=""><a href="#examples-Default-ontologyApiProtocolCryptocurrenciesGet-0-angular">Angular</a></li>-->
-                          <li class=""><a href="#examples-Default-ontologyApiProtocolCryptocurrenciesGet-0-csharp">C#</a></li>
-                          <li class=""><a href="#examples-Default-ontologyApiProtocolCryptocurrenciesGet-0-php">PHP</a></li>
-                          <li class=""><a href="#examples-Default-ontologyApiProtocolCryptocurrenciesGet-0-perl">Perl</a></li>
-                          <li class=""><a href="#examples-Default-ontologyApiProtocolCryptocurrenciesGet-0-python">Python</a></li>
+                          <li class="active"><a href="#examples-Default-ontologyApiHtmlRdfaGetCryptocurrenciesByNamePost-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Default-ontologyApiHtmlRdfaGetCryptocurrenciesByNamePost-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Default-ontologyApiHtmlRdfaGetCryptocurrenciesByNamePost-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Default-ontologyApiHtmlRdfaGetCryptocurrenciesByNamePost-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Default-ontologyApiHtmlRdfaGetCryptocurrenciesByNamePost-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Default-ontologyApiHtmlRdfaGetCryptocurrenciesByNamePost-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Default-ontologyApiHtmlRdfaGetCryptocurrenciesByNamePost-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Default-ontologyApiHtmlRdfaGetCryptocurrenciesByNamePost-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Default-ontologyApiHtmlRdfaGetCryptocurrenciesByNamePost-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Default-ontologyApiHtmlRdfaGetCryptocurrenciesByNamePost-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Default-ontologyApiHtmlRdfaGetCryptocurrenciesByNamePost-0-python">Python</a></li>
                         </ul>
 
                         <div class="tab-content">
-                          <div class="tab-pane active" id="examples-Default-ontologyApiProtocolCryptocurrenciesGet-0-curl">
-                           <pre class="prettyprint"><code class="language-bsh">curl -X GET\
--H "Accept: application/json"\
-"http://127.0.0.1:5001/ontology/api/{protocol}/cryptocurrencies"</code></pre>
+                          <div class="tab-pane active" id="examples-Default-ontologyApiHtmlRdfaGetCryptocurrenciesByNamePost-0-curl">
+                           <pre class="prettyprint"><code class="language-bsh">curl -X POST\
+-H "Accept: text/html; charset=utf-8"\
+-H "Content-Type: application/json"\
+"http://127.0.0.1:5001/ontology/api/html-rdfa/getCryptocurrenciesByName"</code></pre>
                           </div>
-                          <div class="tab-pane" id="examples-Default-ontologyApiProtocolCryptocurrenciesGet-0-java">
+                          <div class="tab-pane" id="examples-Default-ontologyApiHtmlRdfaGetCryptocurrenciesByNamePost-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
 import io.swagger.client.auth.*;
 import io.swagger.client.model.*;
@@ -1981,47 +1708,53 @@ public class DefaultApiExample {
     public static void main(String[] args) {
         
         DefaultApi apiInstance = new DefaultApi();
-        String protocol = protocol_example; // String | Used protocol in Cryptocurrency
+        Htmlrdfa_getCryptocurrenciesByName_body body = {
+  "value" : "{\n    \"coins\": [\"bitcoin\", \"ethereum\", \"dogecoin\"]\n}"
+}; // Htmlrdfa_getCryptocurrenciesByName_body | 
         try {
-            Object result = apiInstance.ontologyApiProtocolCryptocurrenciesGet(protocol);
+            'String' result = apiInstance.ontologyApiHtmlRdfaGetCryptocurrenciesByNamePost(body);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#ontologyApiProtocolCryptocurrenciesGet");
+            System.err.println("Exception when calling DefaultApi#ontologyApiHtmlRdfaGetCryptocurrenciesByNamePost");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
 
-                          <div class="tab-pane" id="examples-Default-ontologyApiProtocolCryptocurrenciesGet-0-android">
+                          <div class="tab-pane" id="examples-Default-ontologyApiHtmlRdfaGetCryptocurrenciesByNamePost-0-android">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.DefaultApi;
 
 public class DefaultApiExample {
 
     public static void main(String[] args) {
         DefaultApi apiInstance = new DefaultApi();
-        String protocol = protocol_example; // String | Used protocol in Cryptocurrency
+        Htmlrdfa_getCryptocurrenciesByName_body body = {
+  "value" : "{\n    \"coins\": [\"bitcoin\", \"ethereum\", \"dogecoin\"]\n}"
+}; // Htmlrdfa_getCryptocurrenciesByName_body | 
         try {
-            Object result = apiInstance.ontologyApiProtocolCryptocurrenciesGet(protocol);
+            'String' result = apiInstance.ontologyApiHtmlRdfaGetCryptocurrenciesByNamePost(body);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#ontologyApiProtocolCryptocurrenciesGet");
+            System.err.println("Exception when calling DefaultApi#ontologyApiHtmlRdfaGetCryptocurrenciesByNamePost");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
   <!--
-  <div class="tab-pane" id="examples-Default-ontologyApiProtocolCryptocurrenciesGet-0-groovy">
+  <div class="tab-pane" id="examples-Default-ontologyApiHtmlRdfaGetCryptocurrenciesByNamePost-0-groovy">
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
-                            <div class="tab-pane" id="examples-Default-ontologyApiProtocolCryptocurrenciesGet-0-objc">
-                              <pre class="prettyprint"><code class="language-cpp">String *protocol = protocol_example; // Used protocol in Cryptocurrency
+                            <div class="tab-pane" id="examples-Default-ontologyApiHtmlRdfaGetCryptocurrenciesByNamePost-0-objc">
+                              <pre class="prettyprint"><code class="language-cpp">Htmlrdfa_getCryptocurrenciesByName_body *body = {
+  "value" : "{\n    \"coins\": [\"bitcoin\", \"ethereum\", \"dogecoin\"]\n}"
+}; //  (optional)
 
 DefaultApi *apiInstance = [[DefaultApi alloc] init];
 
-[apiInstance ontologyApiProtocolCryptocurrenciesGetWith:protocol
-              completionHandler: ^(Object output, NSError* error) {
+[apiInstance ontologyApiHtmlRdfaGetCryptocurrenciesByNamePostWith:body
+              completionHandler: ^('String' output, NSError* error) {
                             if (output) {
                                 NSLog(@"%@", output);
                             }
@@ -2032,12 +1765,15 @@ DefaultApi *apiInstance = [[DefaultApi alloc] init];
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-ontologyApiProtocolCryptocurrenciesGet-0-javascript">
-                              <pre class="prettyprint"><code class="language-js">var CrykSemanticApi = require('cryk_semantic_api');
+                            <div class="tab-pane" id="examples-Default-ontologyApiHtmlRdfaGetCryptocurrenciesByNamePost-0-javascript">
+                              <pre class="prettyprint"><code class="language-js">var DefaultTitle = require('default_title');
 
-var api = new CrykSemanticApi.DefaultApi()
-var protocol = protocol_example; // {{String}} Used protocol in Cryptocurrency
-
+var api = new DefaultTitle.DefaultApi()
+var opts = { 
+  'body': {
+  "value" : "{\n    \"coins\": [\"bitcoin\", \"ethereum\", \"dogecoin\"]\n}"
+} // {{Htmlrdfa_getCryptocurrenciesByName_body}} 
+};
 var callback = function(error, data, response) {
   if (error) {
     console.error(error);
@@ -2045,14 +1781,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.ontologyApiProtocolCryptocurrenciesGet(protocol, callback);
+api.ontologyApiHtmlRdfaGetCryptocurrenciesByNamePost(opts, callback);
 </code></pre>
                             </div>
 
-                            <!--<div class="tab-pane" id="examples-Default-ontologyApiProtocolCryptocurrenciesGet-0-angular">
+                            <!--<div class="tab-pane" id="examples-Default-ontologyApiHtmlRdfaGetCryptocurrenciesByNamePost-0-angular">
               <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
             </div>-->
-                            <div class="tab-pane" id="examples-Default-ontologyApiProtocolCryptocurrenciesGet-0-csharp">
+                            <div class="tab-pane" id="examples-Default-ontologyApiHtmlRdfaGetCryptocurrenciesByNamePost-0-csharp">
                               <pre class="prettyprint"><code class="language-cs">using System;
 using System.Diagnostics;
 using IO.Swagger.Api;
@@ -2061,22 +1797,22 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class ontologyApiProtocolCryptocurrenciesGetExample
+    public class ontologyApiHtmlRdfaGetCryptocurrenciesByNamePostExample
     {
         public void main()
         {
 
             var apiInstance = new DefaultApi();
-            var protocol = protocol_example;  // String | Used protocol in Cryptocurrency
+            var body = new Htmlrdfa_getCryptocurrenciesByName_body(); // Htmlrdfa_getCryptocurrenciesByName_body |  (optional) 
 
             try
             {
-                Object result = apiInstance.ontologyApiProtocolCryptocurrenciesGet(protocol);
+                'String' result = apiInstance.ontologyApiHtmlRdfaGetCryptocurrenciesByNamePost(body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling DefaultApi.ontologyApiProtocolCryptocurrenciesGet: " + e.Message );
+                Debug.Print("Exception when calling DefaultApi.ontologyApiHtmlRdfaGetCryptocurrenciesByNamePost: " + e.Message );
             }
         }
     }
@@ -2084,40 +1820,42 @@ namespace Example
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-ontologyApiProtocolCryptocurrenciesGet-0-php">
+                            <div class="tab-pane" id="examples-Default-ontologyApiHtmlRdfaGetCryptocurrenciesByNamePost-0-php">
                               <pre class="prettyprint"><code class="language-php"><&#63;php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\ApiDefaultApi();
-$protocol = protocol_example; // String | Used protocol in Cryptocurrency
+$body = {
+  "value" : "{\n    \"coins\": [\"bitcoin\", \"ethereum\", \"dogecoin\"]\n}"
+}; // Htmlrdfa_getCryptocurrenciesByName_body | 
 
 try {
-    $result = $api_instance->ontologyApiProtocolCryptocurrenciesGet($protocol);
+    $result = $api_instance->ontologyApiHtmlRdfaGetCryptocurrenciesByNamePost($body);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->ontologyApiProtocolCryptocurrenciesGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DefaultApi->ontologyApiHtmlRdfaGetCryptocurrenciesByNamePost: ', $e->getMessage(), PHP_EOL;
 }
 ?></code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-ontologyApiProtocolCryptocurrenciesGet-0-perl">
+                            <div class="tab-pane" id="examples-Default-ontologyApiHtmlRdfaGetCryptocurrenciesByNamePost-0-perl">
                               <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
 use WWW::SwaggerClient::Configuration;
 use WWW::SwaggerClient::DefaultApi;
 
 my $api_instance = WWW::SwaggerClient::DefaultApi->new();
-my $protocol = protocol_example; # String | Used protocol in Cryptocurrency
+my $body = WWW::SwaggerClient::Object::Htmlrdfa_getCryptocurrenciesByName_body->new(); # Htmlrdfa_getCryptocurrenciesByName_body | 
 
 eval { 
-    my $result = $api_instance->ontologyApiProtocolCryptocurrenciesGet(protocol => $protocol);
+    my $result = $api_instance->ontologyApiHtmlRdfaGetCryptocurrenciesByNamePost(body => $body);
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling DefaultApi->ontologyApiProtocolCryptocurrenciesGet: $@\n";
+    warn "Exception when calling DefaultApi->ontologyApiHtmlRdfaGetCryptocurrenciesByNamePost: $@\n";
 }</code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-ontologyApiProtocolCryptocurrenciesGet-0-python">
+                            <div class="tab-pane" id="examples-Default-ontologyApiHtmlRdfaGetCryptocurrenciesByNamePost-0-python">
                               <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
 import time
 import swagger_client
@@ -2126,49 +1864,69 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.DefaultApi()
-protocol = protocol_example # String | Used protocol in Cryptocurrency
+body = {
+  "value" : "{\n    \"coins\": [\"bitcoin\", \"ethereum\", \"dogecoin\"]\n}"
+} # Htmlrdfa_getCryptocurrenciesByName_body |  (optional)
 
 try: 
-    api_response = api_instance.ontology_api_protocol_cryptocurrencies_get(protocol)
+    api_response = api_instance.ontology_api_html_rdfa_get_cryptocurrencies_by_name_post(body=body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling DefaultApi->ontologyApiProtocolCryptocurrenciesGet: %s\n" % e)</code></pre>
+    print("Exception when calling DefaultApi->ontologyApiHtmlRdfaGetCryptocurrenciesByNamePost: %s\n" % e)</code></pre>
                             </div>
                           </div>
 
                           <h2>Parameters</h2>
 
-                            <div class="methodsubtabletitle">Path parameters</div>
+
+
+                            <div class="methodsubtabletitle">Body parameters</div>
                             <table id="methodsubtable">
-                                <tr>
-                                  <th width="150px">Name</th>
-                                  <th>Description</th>
+                              <tr>
+                                <th width="150px">Name</th>
+                                <th>Description</th>
+                              </tr>
+                                <tr><td style="width:150px;">body </td>
+                                <td>
+                                
+                                
+                                <script>
+                                $(document).ready(function() {
+                                  var schemaWrapper = {
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/htmlrdfa_getCryptocurrenciesByName_body"
+      },
+      "examples" : {
+        "0" : {
+          "value" : "{\n    \"coins\": [\"bitcoin\", \"ethereum\", \"dogecoin\"]\n}"
+        }
+      }
+    }
+  }
+};
+                                  var schema = schemaWrapper.content["application/json"].schema;
+                                  if (schema.$ref != null) {
+                                    schema = defsParser.$refs.get(schema.$ref);
+                                  } else {
+                                    schemaWrapper.components = {};
+                                    schemaWrapper.components.schemas = Object.assign({}, defs);
+                                    $RefParser.dereference(schemaWrapper).catch(function(err) {
+                                      console.log(err);
+                                    });
+                                  }
+                                
+                                  var view = new JSONSchemaView(schema,2,{isBodyParam: true});
+                                  var result = $('#d2e199_ontologyApiHtmlRdfaGetCryptocurrenciesByNamePost_body');
+                                  result.empty();
+                                  result.append(view.render());
+                                });
+                                </script>
+                                <div id="d2e199_ontologyApiHtmlRdfaGetCryptocurrenciesByNamePost_body"></div>
+                                </td>
                                 </tr>
-                                  <tr><td style="width:150px;">protocol*</td>
-                                  <td>
-                                  
-                                  
-                                      <div id="d2e199_ontologyApiProtocolCryptocurrenciesGet_protocol">
-                                          <div class="json-schema-view">
-                                              <div class="primitive">
-                                                  <span class="type">
-                                                      String
-                                                  </span>
-                                  
-                                                      <div class="inner description">
-                                                          Used protocol in Cryptocurrency
-                                                      </div>
-                                              </div>
-                                                  <div class="inner required">
-                                                      Required
-                                                  </div>
-                                          </div>
-                                      </div>
-                                  </td>
-                                  </tr>
                             </table>
-
-
 
 
 
@@ -2177,18 +1935,29 @@ except ApiException as e:
 
                             <ul class="nav nav-tabs nav-tabs-examples" >
                                 <li class="active">
-                                  <a data-toggle="tab" href="#responses-ontologyApiProtocolCryptocurrenciesGet-200-schema">Schema</a>
+                                  <a data-toggle="tab" href="#responses-ontologyApiHtmlRdfaGetCryptocurrenciesByNamePost-200-schema">Schema</a>
                                 </li>
 
                             </ul>
 
                             <div class="tab-content" style='margin-bottom: 10px;'>
-                                <div class="tab-pane active" id="responses-ontologyApiProtocolCryptocurrenciesGet-200-schema">
-                                  <div id='responses-ontologyApiProtocolCryptocurrenciesGet-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                <div class="tab-pane active" id="responses-ontologyApiHtmlRdfaGetCryptocurrenciesByNamePost-200-schema">
+                                  <div id='responses-ontologyApiHtmlRdfaGetCryptocurrenciesByNamePost-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
                                     <script>
                                       $(document).ready(function() {
-                                        var schemaWrapper = ;
-                                        var schema = schemaWrapper.content["application/json"].schema;
+                                        var schemaWrapper = {
+  "description" : "Auto generated using Swagger Inspector",
+  "content" : {
+    "text/html; charset=utf-8" : {
+      "schema" : {
+        "type" : "string",
+        "x-content-type" : "text/html; charset=utf-8"
+      },
+      "examples" : { }
+    }
+  }
+};
+                                        var schema = schemaWrapper.content["text/html; charset&#x3D;utf-8"].schema;
                                         if (schema.$ref != null) {
                                           schema = defsParser.$refs.get(schema.$ref);
                                         } else {
@@ -2201,15 +1970,975 @@ except ApiException as e:
 
                                         //console.log(JSON.stringify(schema));
                                         var view = new JSONSchemaView(schema, 3);
-                                        $('#responses-ontologyApiProtocolCryptocurrenciesGet-200-schema-data').val(stringify(schema));
-                                        var result = $('#responses-ontologyApiProtocolCryptocurrenciesGet-200-schema-200');
+                                        $('#responses-ontologyApiHtmlRdfaGetCryptocurrenciesByNamePost-200-schema-data').val(stringify(schema));
+                                        var result = $('#responses-ontologyApiHtmlRdfaGetCryptocurrenciesByNamePost-200-schema-200');
                                         result.empty();
                                         result.append(view.render());
                                       });
                                     </script>
                                   </div>
-                                  <input id='responses-ontologyApiProtocolCryptocurrenciesGet-200-schema-data' type='hidden' value=''></input>
+                                  <input id='responses-ontologyApiHtmlRdfaGetCryptocurrenciesByNamePost-200-schema-data' type='hidden' value=''></input>
                                 </div>
+                            </div>
+
+                        </article>
+                      </div>
+                      <hr>
+                    <div id="api-Default-ontologyApiHtmlRdfaGetCryptocurrenciesGet">
+                      <article id="api-Default-ontologyApiHtmlRdfaGetCryptocurrenciesGet-0" data-group="User" data-name="ontologyApiHtmlRdfaGetCryptocurrenciesGet" data-version="0">
+                        <div class="pull-left">
+                          <h1>ontologyApiHtmlRdfaGetCryptocurrenciesGet</h1>
+                          <p></p>
+                        </div>
+                        <div class="pull-right"></div>
+                        <div class="clearfix"></div>
+                        <p></p>
+                        <p class="marked">Auto generated using Swagger Inspector</p>
+                        <p></p>
+                        <br />
+                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/ontology/api/html-rdfa/getCryptocurrencies</span></code></pre>
+                        <p>
+                          <h3>Usage and SDK Samples</h3>
+                        </p>
+                        <ul class="nav nav-tabs nav-tabs-examples">
+                          <li class="active"><a href="#examples-Default-ontologyApiHtmlRdfaGetCryptocurrenciesGet-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Default-ontologyApiHtmlRdfaGetCryptocurrenciesGet-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Default-ontologyApiHtmlRdfaGetCryptocurrenciesGet-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Default-ontologyApiHtmlRdfaGetCryptocurrenciesGet-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Default-ontologyApiHtmlRdfaGetCryptocurrenciesGet-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Default-ontologyApiHtmlRdfaGetCryptocurrenciesGet-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Default-ontologyApiHtmlRdfaGetCryptocurrenciesGet-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Default-ontologyApiHtmlRdfaGetCryptocurrenciesGet-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Default-ontologyApiHtmlRdfaGetCryptocurrenciesGet-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Default-ontologyApiHtmlRdfaGetCryptocurrenciesGet-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Default-ontologyApiHtmlRdfaGetCryptocurrenciesGet-0-python">Python</a></li>
+                        </ul>
+
+                        <div class="tab-content">
+                          <div class="tab-pane active" id="examples-Default-ontologyApiHtmlRdfaGetCryptocurrenciesGet-0-curl">
+                           <pre class="prettyprint"><code class="language-bsh">curl -X GET\
+"http://127.0.0.1:5001/ontology/api/html-rdfa/getCryptocurrencies"</code></pre>
+                          </div>
+                          <div class="tab-pane" id="examples-Default-ontologyApiHtmlRdfaGetCryptocurrenciesGet-0-java">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
+import io.swagger.client.auth.*;
+import io.swagger.client.model.*;
+import io.swagger.client.api.DefaultApi;
+
+import java.io.File;
+import java.util.*;
+
+public class DefaultApiExample {
+
+    public static void main(String[] args) {
+        
+        DefaultApi apiInstance = new DefaultApi();
+        try {
+            apiInstance.ontologyApiHtmlRdfaGetCryptocurrenciesGet();
+        } catch (ApiException e) {
+            System.err.println("Exception when calling DefaultApi#ontologyApiHtmlRdfaGetCryptocurrenciesGet");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+
+                          <div class="tab-pane" id="examples-Default-ontologyApiHtmlRdfaGetCryptocurrenciesGet-0-android">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.DefaultApi;
+
+public class DefaultApiExample {
+
+    public static void main(String[] args) {
+        DefaultApi apiInstance = new DefaultApi();
+        try {
+            apiInstance.ontologyApiHtmlRdfaGetCryptocurrenciesGet();
+        } catch (ApiException e) {
+            System.err.println("Exception when calling DefaultApi#ontologyApiHtmlRdfaGetCryptocurrenciesGet");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+  <!--
+  <div class="tab-pane" id="examples-Default-ontologyApiHtmlRdfaGetCryptocurrenciesGet-0-groovy">
+  <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+  </div> -->
+                            <div class="tab-pane" id="examples-Default-ontologyApiHtmlRdfaGetCryptocurrenciesGet-0-objc">
+                              <pre class="prettyprint"><code class="language-cpp">
+DefaultApi *apiInstance = [[DefaultApi alloc] init];
+
+[apiInstance ontologyApiHtmlRdfaGetCryptocurrenciesGetWithCompletionHandler: 
+              ^(NSError* error) {
+                            if (error) {
+                                NSLog(@"Error: %@", error);
+                            }
+                        }];
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Default-ontologyApiHtmlRdfaGetCryptocurrenciesGet-0-javascript">
+                              <pre class="prettyprint"><code class="language-js">var DefaultTitle = require('default_title');
+
+var api = new DefaultTitle.DefaultApi()
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.ontologyApiHtmlRdfaGetCryptocurrenciesGet(callback);
+</code></pre>
+                            </div>
+
+                            <!--<div class="tab-pane" id="examples-Default-ontologyApiHtmlRdfaGetCryptocurrenciesGet-0-angular">
+              <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+            </div>-->
+                            <div class="tab-pane" id="examples-Default-ontologyApiHtmlRdfaGetCryptocurrenciesGet-0-csharp">
+                              <pre class="prettyprint"><code class="language-cs">using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class ontologyApiHtmlRdfaGetCryptocurrenciesGetExample
+    {
+        public void main()
+        {
+
+            var apiInstance = new DefaultApi();
+
+            try
+            {
+                apiInstance.ontologyApiHtmlRdfaGetCryptocurrenciesGet();
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling DefaultApi.ontologyApiHtmlRdfaGetCryptocurrenciesGet: " + e.Message );
+            }
+        }
+    }
+}
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Default-ontologyApiHtmlRdfaGetCryptocurrenciesGet-0-php">
+                              <pre class="prettyprint"><code class="language-php"><&#63;php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Swagger\Client\ApiDefaultApi();
+
+try {
+    $api_instance->ontologyApiHtmlRdfaGetCryptocurrenciesGet();
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->ontologyApiHtmlRdfaGetCryptocurrenciesGet: ', $e->getMessage(), PHP_EOL;
+}
+?></code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Default-ontologyApiHtmlRdfaGetCryptocurrenciesGet-0-perl">
+                              <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
+use WWW::SwaggerClient::Configuration;
+use WWW::SwaggerClient::DefaultApi;
+
+my $api_instance = WWW::SwaggerClient::DefaultApi->new();
+
+eval { 
+    $api_instance->ontologyApiHtmlRdfaGetCryptocurrenciesGet();
+};
+if ($@) {
+    warn "Exception when calling DefaultApi->ontologyApiHtmlRdfaGetCryptocurrenciesGet: $@\n";
+}</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Default-ontologyApiHtmlRdfaGetCryptocurrenciesGet-0-python">
+                              <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.DefaultApi()
+
+try: 
+    api_instance.ontology_api_html_rdfa_get_cryptocurrencies_get()
+except ApiException as e:
+    print("Exception when calling DefaultApi->ontologyApiHtmlRdfaGetCryptocurrenciesGet: %s\n" % e)</code></pre>
+                            </div>
+                          </div>
+
+                          <h2>Parameters</h2>
+
+
+
+
+
+
+                          <h2>Responses</h2>
+                            <h3> Status: 200 - Auto generated using Swagger Inspector </h3>
+
+                            <ul class="nav nav-tabs nav-tabs-examples" >
+                            </ul>
+
+                            <div class="tab-content" style='margin-bottom: 10px;'>
+                            </div>
+
+                        </article>
+                      </div>
+                      <hr>
+                    <div id="api-Default-ontologyApiJsonLdGetCryptocurrenciesByNamePost">
+                      <article id="api-Default-ontologyApiJsonLdGetCryptocurrenciesByNamePost-0" data-group="User" data-name="ontologyApiJsonLdGetCryptocurrenciesByNamePost" data-version="0">
+                        <div class="pull-left">
+                          <h1>ontologyApiJsonLdGetCryptocurrenciesByNamePost</h1>
+                          <p></p>
+                        </div>
+                        <div class="pull-right"></div>
+                        <div class="clearfix"></div>
+                        <p></p>
+                        <p class="marked">Auto generated using Swagger Inspector</p>
+                        <p></p>
+                        <br />
+                        <pre class="prettyprint language-html prettyprinted" data-type="post"><code><span class="pln">/ontology/api/json-ld/getCryptocurrenciesByName</span></code></pre>
+                        <p>
+                          <h3>Usage and SDK Samples</h3>
+                        </p>
+                        <ul class="nav nav-tabs nav-tabs-examples">
+                          <li class="active"><a href="#examples-Default-ontologyApiJsonLdGetCryptocurrenciesByNamePost-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Default-ontologyApiJsonLdGetCryptocurrenciesByNamePost-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Default-ontologyApiJsonLdGetCryptocurrenciesByNamePost-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Default-ontologyApiJsonLdGetCryptocurrenciesByNamePost-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Default-ontologyApiJsonLdGetCryptocurrenciesByNamePost-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Default-ontologyApiJsonLdGetCryptocurrenciesByNamePost-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Default-ontologyApiJsonLdGetCryptocurrenciesByNamePost-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Default-ontologyApiJsonLdGetCryptocurrenciesByNamePost-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Default-ontologyApiJsonLdGetCryptocurrenciesByNamePost-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Default-ontologyApiJsonLdGetCryptocurrenciesByNamePost-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Default-ontologyApiJsonLdGetCryptocurrenciesByNamePost-0-python">Python</a></li>
+                        </ul>
+
+                        <div class="tab-content">
+                          <div class="tab-pane active" id="examples-Default-ontologyApiJsonLdGetCryptocurrenciesByNamePost-0-curl">
+                           <pre class="prettyprint"><code class="language-bsh">curl -X POST\
+-H "Content-Type: application/json"\
+"http://127.0.0.1:5001/ontology/api/json-ld/getCryptocurrenciesByName"</code></pre>
+                          </div>
+                          <div class="tab-pane" id="examples-Default-ontologyApiJsonLdGetCryptocurrenciesByNamePost-0-java">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
+import io.swagger.client.auth.*;
+import io.swagger.client.model.*;
+import io.swagger.client.api.DefaultApi;
+
+import java.io.File;
+import java.util.*;
+
+public class DefaultApiExample {
+
+    public static void main(String[] args) {
+        
+        DefaultApi apiInstance = new DefaultApi();
+        Jsonld_getCryptocurrenciesByName_body body = {
+  "value" : "{\n    \"coins\": [\"bitcoin\", \"ethereum\", \"dogecoin\"]\n}"
+}; // Jsonld_getCryptocurrenciesByName_body | 
+        try {
+            apiInstance.ontologyApiJsonLdGetCryptocurrenciesByNamePost(body);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling DefaultApi#ontologyApiJsonLdGetCryptocurrenciesByNamePost");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+
+                          <div class="tab-pane" id="examples-Default-ontologyApiJsonLdGetCryptocurrenciesByNamePost-0-android">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.DefaultApi;
+
+public class DefaultApiExample {
+
+    public static void main(String[] args) {
+        DefaultApi apiInstance = new DefaultApi();
+        Jsonld_getCryptocurrenciesByName_body body = {
+  "value" : "{\n    \"coins\": [\"bitcoin\", \"ethereum\", \"dogecoin\"]\n}"
+}; // Jsonld_getCryptocurrenciesByName_body | 
+        try {
+            apiInstance.ontologyApiJsonLdGetCryptocurrenciesByNamePost(body);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling DefaultApi#ontologyApiJsonLdGetCryptocurrenciesByNamePost");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+  <!--
+  <div class="tab-pane" id="examples-Default-ontologyApiJsonLdGetCryptocurrenciesByNamePost-0-groovy">
+  <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+  </div> -->
+                            <div class="tab-pane" id="examples-Default-ontologyApiJsonLdGetCryptocurrenciesByNamePost-0-objc">
+                              <pre class="prettyprint"><code class="language-cpp">Jsonld_getCryptocurrenciesByName_body *body = {
+  "value" : "{\n    \"coins\": [\"bitcoin\", \"ethereum\", \"dogecoin\"]\n}"
+}; //  (optional)
+
+DefaultApi *apiInstance = [[DefaultApi alloc] init];
+
+[apiInstance ontologyApiJsonLdGetCryptocurrenciesByNamePostWith:body
+              completionHandler: ^(NSError* error) {
+                            if (error) {
+                                NSLog(@"Error: %@", error);
+                            }
+                        }];
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Default-ontologyApiJsonLdGetCryptocurrenciesByNamePost-0-javascript">
+                              <pre class="prettyprint"><code class="language-js">var DefaultTitle = require('default_title');
+
+var api = new DefaultTitle.DefaultApi()
+var opts = { 
+  'body': {
+  "value" : "{\n    \"coins\": [\"bitcoin\", \"ethereum\", \"dogecoin\"]\n}"
+} // {{Jsonld_getCryptocurrenciesByName_body}} 
+};
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.ontologyApiJsonLdGetCryptocurrenciesByNamePost(opts, callback);
+</code></pre>
+                            </div>
+
+                            <!--<div class="tab-pane" id="examples-Default-ontologyApiJsonLdGetCryptocurrenciesByNamePost-0-angular">
+              <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+            </div>-->
+                            <div class="tab-pane" id="examples-Default-ontologyApiJsonLdGetCryptocurrenciesByNamePost-0-csharp">
+                              <pre class="prettyprint"><code class="language-cs">using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class ontologyApiJsonLdGetCryptocurrenciesByNamePostExample
+    {
+        public void main()
+        {
+
+            var apiInstance = new DefaultApi();
+            var body = new Jsonld_getCryptocurrenciesByName_body(); // Jsonld_getCryptocurrenciesByName_body |  (optional) 
+
+            try
+            {
+                apiInstance.ontologyApiJsonLdGetCryptocurrenciesByNamePost(body);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling DefaultApi.ontologyApiJsonLdGetCryptocurrenciesByNamePost: " + e.Message );
+            }
+        }
+    }
+}
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Default-ontologyApiJsonLdGetCryptocurrenciesByNamePost-0-php">
+                              <pre class="prettyprint"><code class="language-php"><&#63;php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Swagger\Client\ApiDefaultApi();
+$body = {
+  "value" : "{\n    \"coins\": [\"bitcoin\", \"ethereum\", \"dogecoin\"]\n}"
+}; // Jsonld_getCryptocurrenciesByName_body | 
+
+try {
+    $api_instance->ontologyApiJsonLdGetCryptocurrenciesByNamePost($body);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->ontologyApiJsonLdGetCryptocurrenciesByNamePost: ', $e->getMessage(), PHP_EOL;
+}
+?></code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Default-ontologyApiJsonLdGetCryptocurrenciesByNamePost-0-perl">
+                              <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
+use WWW::SwaggerClient::Configuration;
+use WWW::SwaggerClient::DefaultApi;
+
+my $api_instance = WWW::SwaggerClient::DefaultApi->new();
+my $body = WWW::SwaggerClient::Object::Jsonld_getCryptocurrenciesByName_body->new(); # Jsonld_getCryptocurrenciesByName_body | 
+
+eval { 
+    $api_instance->ontologyApiJsonLdGetCryptocurrenciesByNamePost(body => $body);
+};
+if ($@) {
+    warn "Exception when calling DefaultApi->ontologyApiJsonLdGetCryptocurrenciesByNamePost: $@\n";
+}</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Default-ontologyApiJsonLdGetCryptocurrenciesByNamePost-0-python">
+                              <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.DefaultApi()
+body = {
+  "value" : "{\n    \"coins\": [\"bitcoin\", \"ethereum\", \"dogecoin\"]\n}"
+} # Jsonld_getCryptocurrenciesByName_body |  (optional)
+
+try: 
+    api_instance.ontology_api_json_ld_get_cryptocurrencies_by_name_post(body=body)
+except ApiException as e:
+    print("Exception when calling DefaultApi->ontologyApiJsonLdGetCryptocurrenciesByNamePost: %s\n" % e)</code></pre>
+                            </div>
+                          </div>
+
+                          <h2>Parameters</h2>
+
+
+
+                            <div class="methodsubtabletitle">Body parameters</div>
+                            <table id="methodsubtable">
+                              <tr>
+                                <th width="150px">Name</th>
+                                <th>Description</th>
+                              </tr>
+                                <tr><td style="width:150px;">body </td>
+                                <td>
+                                
+                                
+                                <script>
+                                $(document).ready(function() {
+                                  var schemaWrapper = {
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/jsonld_getCryptocurrenciesByName_body"
+      },
+      "examples" : {
+        "0" : {
+          "value" : "{\n    \"coins\": [\"bitcoin\", \"ethereum\", \"dogecoin\"]\n}"
+        }
+      }
+    }
+  }
+};
+                                  var schema = schemaWrapper.content["application/json"].schema;
+                                  if (schema.$ref != null) {
+                                    schema = defsParser.$refs.get(schema.$ref);
+                                  } else {
+                                    schemaWrapper.components = {};
+                                    schemaWrapper.components.schemas = Object.assign({}, defs);
+                                    $RefParser.dereference(schemaWrapper).catch(function(err) {
+                                      console.log(err);
+                                    });
+                                  }
+                                
+                                  var view = new JSONSchemaView(schema,2,{isBodyParam: true});
+                                  var result = $('#d2e199_ontologyApiJsonLdGetCryptocurrenciesByNamePost_body');
+                                  result.empty();
+                                  result.append(view.render());
+                                });
+                                </script>
+                                <div id="d2e199_ontologyApiJsonLdGetCryptocurrenciesByNamePost_body"></div>
+                                </td>
+                                </tr>
+                            </table>
+
+
+
+                          <h2>Responses</h2>
+                            <h3> Status: 200 - Auto generated using Swagger Inspector </h3>
+
+                            <ul class="nav nav-tabs nav-tabs-examples" >
+                            </ul>
+
+                            <div class="tab-content" style='margin-bottom: 10px;'>
+                            </div>
+
+                        </article>
+                      </div>
+                      <hr>
+                    <div id="api-Default-ontologyApiJsonLdGetCryptocurrenciesGet">
+                      <article id="api-Default-ontologyApiJsonLdGetCryptocurrenciesGet-0" data-group="User" data-name="ontologyApiJsonLdGetCryptocurrenciesGet" data-version="0">
+                        <div class="pull-left">
+                          <h1>ontologyApiJsonLdGetCryptocurrenciesGet</h1>
+                          <p></p>
+                        </div>
+                        <div class="pull-right"></div>
+                        <div class="clearfix"></div>
+                        <p></p>
+                        <p class="marked">Auto generated using Swagger Inspector</p>
+                        <p></p>
+                        <br />
+                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/ontology/api/json-ld/getCryptocurrencies</span></code></pre>
+                        <p>
+                          <h3>Usage and SDK Samples</h3>
+                        </p>
+                        <ul class="nav nav-tabs nav-tabs-examples">
+                          <li class="active"><a href="#examples-Default-ontologyApiJsonLdGetCryptocurrenciesGet-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Default-ontologyApiJsonLdGetCryptocurrenciesGet-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Default-ontologyApiJsonLdGetCryptocurrenciesGet-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Default-ontologyApiJsonLdGetCryptocurrenciesGet-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Default-ontologyApiJsonLdGetCryptocurrenciesGet-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Default-ontologyApiJsonLdGetCryptocurrenciesGet-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Default-ontologyApiJsonLdGetCryptocurrenciesGet-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Default-ontologyApiJsonLdGetCryptocurrenciesGet-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Default-ontologyApiJsonLdGetCryptocurrenciesGet-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Default-ontologyApiJsonLdGetCryptocurrenciesGet-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Default-ontologyApiJsonLdGetCryptocurrenciesGet-0-python">Python</a></li>
+                        </ul>
+
+                        <div class="tab-content">
+                          <div class="tab-pane active" id="examples-Default-ontologyApiJsonLdGetCryptocurrenciesGet-0-curl">
+                           <pre class="prettyprint"><code class="language-bsh">curl -X GET\
+"http://127.0.0.1:5001/ontology/api/json-ld/getCryptocurrencies"</code></pre>
+                          </div>
+                          <div class="tab-pane" id="examples-Default-ontologyApiJsonLdGetCryptocurrenciesGet-0-java">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
+import io.swagger.client.auth.*;
+import io.swagger.client.model.*;
+import io.swagger.client.api.DefaultApi;
+
+import java.io.File;
+import java.util.*;
+
+public class DefaultApiExample {
+
+    public static void main(String[] args) {
+        
+        DefaultApi apiInstance = new DefaultApi();
+        try {
+            apiInstance.ontologyApiJsonLdGetCryptocurrenciesGet();
+        } catch (ApiException e) {
+            System.err.println("Exception when calling DefaultApi#ontologyApiJsonLdGetCryptocurrenciesGet");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+
+                          <div class="tab-pane" id="examples-Default-ontologyApiJsonLdGetCryptocurrenciesGet-0-android">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.DefaultApi;
+
+public class DefaultApiExample {
+
+    public static void main(String[] args) {
+        DefaultApi apiInstance = new DefaultApi();
+        try {
+            apiInstance.ontologyApiJsonLdGetCryptocurrenciesGet();
+        } catch (ApiException e) {
+            System.err.println("Exception when calling DefaultApi#ontologyApiJsonLdGetCryptocurrenciesGet");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+  <!--
+  <div class="tab-pane" id="examples-Default-ontologyApiJsonLdGetCryptocurrenciesGet-0-groovy">
+  <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+  </div> -->
+                            <div class="tab-pane" id="examples-Default-ontologyApiJsonLdGetCryptocurrenciesGet-0-objc">
+                              <pre class="prettyprint"><code class="language-cpp">
+DefaultApi *apiInstance = [[DefaultApi alloc] init];
+
+[apiInstance ontologyApiJsonLdGetCryptocurrenciesGetWithCompletionHandler: 
+              ^(NSError* error) {
+                            if (error) {
+                                NSLog(@"Error: %@", error);
+                            }
+                        }];
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Default-ontologyApiJsonLdGetCryptocurrenciesGet-0-javascript">
+                              <pre class="prettyprint"><code class="language-js">var DefaultTitle = require('default_title');
+
+var api = new DefaultTitle.DefaultApi()
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.ontologyApiJsonLdGetCryptocurrenciesGet(callback);
+</code></pre>
+                            </div>
+
+                            <!--<div class="tab-pane" id="examples-Default-ontologyApiJsonLdGetCryptocurrenciesGet-0-angular">
+              <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+            </div>-->
+                            <div class="tab-pane" id="examples-Default-ontologyApiJsonLdGetCryptocurrenciesGet-0-csharp">
+                              <pre class="prettyprint"><code class="language-cs">using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class ontologyApiJsonLdGetCryptocurrenciesGetExample
+    {
+        public void main()
+        {
+
+            var apiInstance = new DefaultApi();
+
+            try
+            {
+                apiInstance.ontologyApiJsonLdGetCryptocurrenciesGet();
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling DefaultApi.ontologyApiJsonLdGetCryptocurrenciesGet: " + e.Message );
+            }
+        }
+    }
+}
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Default-ontologyApiJsonLdGetCryptocurrenciesGet-0-php">
+                              <pre class="prettyprint"><code class="language-php"><&#63;php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Swagger\Client\ApiDefaultApi();
+
+try {
+    $api_instance->ontologyApiJsonLdGetCryptocurrenciesGet();
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->ontologyApiJsonLdGetCryptocurrenciesGet: ', $e->getMessage(), PHP_EOL;
+}
+?></code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Default-ontologyApiJsonLdGetCryptocurrenciesGet-0-perl">
+                              <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
+use WWW::SwaggerClient::Configuration;
+use WWW::SwaggerClient::DefaultApi;
+
+my $api_instance = WWW::SwaggerClient::DefaultApi->new();
+
+eval { 
+    $api_instance->ontologyApiJsonLdGetCryptocurrenciesGet();
+};
+if ($@) {
+    warn "Exception when calling DefaultApi->ontologyApiJsonLdGetCryptocurrenciesGet: $@\n";
+}</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Default-ontologyApiJsonLdGetCryptocurrenciesGet-0-python">
+                              <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.DefaultApi()
+
+try: 
+    api_instance.ontology_api_json_ld_get_cryptocurrencies_get()
+except ApiException as e:
+    print("Exception when calling DefaultApi->ontologyApiJsonLdGetCryptocurrenciesGet: %s\n" % e)</code></pre>
+                            </div>
+                          </div>
+
+                          <h2>Parameters</h2>
+
+
+
+
+
+
+                          <h2>Responses</h2>
+                            <h3> Status: 200 - Auto generated using Swagger Inspector </h3>
+
+                            <ul class="nav nav-tabs nav-tabs-examples" >
+                            </ul>
+
+                            <div class="tab-content" style='margin-bottom: 10px;'>
+                            </div>
+
+                        </article>
+                      </div>
+                      <hr>
+                    <div id="api-Default-ontologyApiRunQueryPost">
+                      <article id="api-Default-ontologyApiRunQueryPost-0" data-group="User" data-name="ontologyApiRunQueryPost" data-version="0">
+                        <div class="pull-left">
+                          <h1>ontologyApiRunQueryPost</h1>
+                          <p></p>
+                        </div>
+                        <div class="pull-right"></div>
+                        <div class="clearfix"></div>
+                        <p></p>
+                        <p class="marked">Auto generated using Swagger Inspector</p>
+                        <p></p>
+                        <br />
+                        <pre class="prettyprint language-html prettyprinted" data-type="post"><code><span class="pln">/ontology/api/runQuery</span></code></pre>
+                        <p>
+                          <h3>Usage and SDK Samples</h3>
+                        </p>
+                        <ul class="nav nav-tabs nav-tabs-examples">
+                          <li class="active"><a href="#examples-Default-ontologyApiRunQueryPost-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Default-ontologyApiRunQueryPost-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Default-ontologyApiRunQueryPost-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Default-ontologyApiRunQueryPost-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Default-ontologyApiRunQueryPost-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Default-ontologyApiRunQueryPost-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Default-ontologyApiRunQueryPost-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Default-ontologyApiRunQueryPost-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Default-ontologyApiRunQueryPost-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Default-ontologyApiRunQueryPost-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Default-ontologyApiRunQueryPost-0-python">Python</a></li>
+                        </ul>
+
+                        <div class="tab-content">
+                          <div class="tab-pane active" id="examples-Default-ontologyApiRunQueryPost-0-curl">
+                           <pre class="prettyprint"><code class="language-bsh">curl -X POST\
+-H "Content-Type: application/json"\
+"http://127.0.0.1:5001/ontology/api/runQuery"</code></pre>
+                          </div>
+                          <div class="tab-pane" id="examples-Default-ontologyApiRunQueryPost-0-java">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
+import io.swagger.client.auth.*;
+import io.swagger.client.model.*;
+import io.swagger.client.api.DefaultApi;
+
+import java.io.File;
+import java.util.*;
+
+public class DefaultApiExample {
+
+    public static void main(String[] args) {
+        
+        DefaultApi apiInstance = new DefaultApi();
+        Api_runQuery_body body = {
+  "value" : "{\n    \"query\": \"PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX ccy: <http://purl.org/net/bel-epa/ccy#> PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX doacc: <http://purl.org/net/bel-epa/doacc#> SELECT ?exp ?name WHERE {{ ?x dc:description ?exp . ?x skos:prefLabel ?name }} LIMIT 3\"\n}"
+}; // Api_runQuery_body | 
+        try {
+            apiInstance.ontologyApiRunQueryPost(body);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling DefaultApi#ontologyApiRunQueryPost");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+
+                          <div class="tab-pane" id="examples-Default-ontologyApiRunQueryPost-0-android">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.DefaultApi;
+
+public class DefaultApiExample {
+
+    public static void main(String[] args) {
+        DefaultApi apiInstance = new DefaultApi();
+        Api_runQuery_body body = {
+  "value" : "{\n    \"query\": \"PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX ccy: <http://purl.org/net/bel-epa/ccy#> PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX doacc: <http://purl.org/net/bel-epa/doacc#> SELECT ?exp ?name WHERE {{ ?x dc:description ?exp . ?x skos:prefLabel ?name }} LIMIT 3\"\n}"
+}; // Api_runQuery_body | 
+        try {
+            apiInstance.ontologyApiRunQueryPost(body);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling DefaultApi#ontologyApiRunQueryPost");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+  <!--
+  <div class="tab-pane" id="examples-Default-ontologyApiRunQueryPost-0-groovy">
+  <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+  </div> -->
+                            <div class="tab-pane" id="examples-Default-ontologyApiRunQueryPost-0-objc">
+                              <pre class="prettyprint"><code class="language-cpp">Api_runQuery_body *body = {
+  "value" : "{\n    \"query\": \"PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX ccy: <http://purl.org/net/bel-epa/ccy#> PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX doacc: <http://purl.org/net/bel-epa/doacc#> SELECT ?exp ?name WHERE {{ ?x dc:description ?exp . ?x skos:prefLabel ?name }} LIMIT 3\"\n}"
+}; //  (optional)
+
+DefaultApi *apiInstance = [[DefaultApi alloc] init];
+
+[apiInstance ontologyApiRunQueryPostWith:body
+              completionHandler: ^(NSError* error) {
+                            if (error) {
+                                NSLog(@"Error: %@", error);
+                            }
+                        }];
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Default-ontologyApiRunQueryPost-0-javascript">
+                              <pre class="prettyprint"><code class="language-js">var DefaultTitle = require('default_title');
+
+var api = new DefaultTitle.DefaultApi()
+var opts = { 
+  'body': {
+  "value" : "{\n    \"query\": \"PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX ccy: <http://purl.org/net/bel-epa/ccy#> PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX doacc: <http://purl.org/net/bel-epa/doacc#> SELECT ?exp ?name WHERE {{ ?x dc:description ?exp . ?x skos:prefLabel ?name }} LIMIT 3\"\n}"
+} // {{Api_runQuery_body}} 
+};
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.ontologyApiRunQueryPost(opts, callback);
+</code></pre>
+                            </div>
+
+                            <!--<div class="tab-pane" id="examples-Default-ontologyApiRunQueryPost-0-angular">
+              <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+            </div>-->
+                            <div class="tab-pane" id="examples-Default-ontologyApiRunQueryPost-0-csharp">
+                              <pre class="prettyprint"><code class="language-cs">using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class ontologyApiRunQueryPostExample
+    {
+        public void main()
+        {
+
+            var apiInstance = new DefaultApi();
+            var body = new Api_runQuery_body(); // Api_runQuery_body |  (optional) 
+
+            try
+            {
+                apiInstance.ontologyApiRunQueryPost(body);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling DefaultApi.ontologyApiRunQueryPost: " + e.Message );
+            }
+        }
+    }
+}
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Default-ontologyApiRunQueryPost-0-php">
+                              <pre class="prettyprint"><code class="language-php"><&#63;php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Swagger\Client\ApiDefaultApi();
+$body = {
+  "value" : "{\n    \"query\": \"PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX ccy: <http://purl.org/net/bel-epa/ccy#> PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX doacc: <http://purl.org/net/bel-epa/doacc#> SELECT ?exp ?name WHERE {{ ?x dc:description ?exp . ?x skos:prefLabel ?name }} LIMIT 3\"\n}"
+}; // Api_runQuery_body | 
+
+try {
+    $api_instance->ontologyApiRunQueryPost($body);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->ontologyApiRunQueryPost: ', $e->getMessage(), PHP_EOL;
+}
+?></code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Default-ontologyApiRunQueryPost-0-perl">
+                              <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
+use WWW::SwaggerClient::Configuration;
+use WWW::SwaggerClient::DefaultApi;
+
+my $api_instance = WWW::SwaggerClient::DefaultApi->new();
+my $body = WWW::SwaggerClient::Object::Api_runQuery_body->new(); # Api_runQuery_body | 
+
+eval { 
+    $api_instance->ontologyApiRunQueryPost(body => $body);
+};
+if ($@) {
+    warn "Exception when calling DefaultApi->ontologyApiRunQueryPost: $@\n";
+}</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Default-ontologyApiRunQueryPost-0-python">
+                              <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.DefaultApi()
+body = {
+  "value" : "{\n    \"query\": \"PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX ccy: <http://purl.org/net/bel-epa/ccy#> PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX doacc: <http://purl.org/net/bel-epa/doacc#> SELECT ?exp ?name WHERE {{ ?x dc:description ?exp . ?x skos:prefLabel ?name }} LIMIT 3\"\n}"
+} # Api_runQuery_body |  (optional)
+
+try: 
+    api_instance.ontology_api_run_query_post(body=body)
+except ApiException as e:
+    print("Exception when calling DefaultApi->ontologyApiRunQueryPost: %s\n" % e)</code></pre>
+                            </div>
+                          </div>
+
+                          <h2>Parameters</h2>
+
+
+
+                            <div class="methodsubtabletitle">Body parameters</div>
+                            <table id="methodsubtable">
+                              <tr>
+                                <th width="150px">Name</th>
+                                <th>Description</th>
+                              </tr>
+                                <tr><td style="width:150px;">body </td>
+                                <td>
+                                
+                                
+                                <script>
+                                $(document).ready(function() {
+                                  var schemaWrapper = {
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/api_runQuery_body"
+      },
+      "examples" : {
+        "0" : {
+          "value" : "{\n    \"query\": \"PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX ccy: <http://purl.org/net/bel-epa/ccy#> PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX doacc: <http://purl.org/net/bel-epa/doacc#> SELECT ?exp ?name WHERE {{ ?x dc:description ?exp . ?x skos:prefLabel ?name }} LIMIT 3\"\n}"
+        }
+      }
+    }
+  }
+};
+                                  var schema = schemaWrapper.content["application/json"].schema;
+                                  if (schema.$ref != null) {
+                                    schema = defsParser.$refs.get(schema.$ref);
+                                  } else {
+                                    schemaWrapper.components = {};
+                                    schemaWrapper.components.schemas = Object.assign({}, defs);
+                                    $RefParser.dereference(schemaWrapper).catch(function(err) {
+                                      console.log(err);
+                                    });
+                                  }
+                                
+                                  var view = new JSONSchemaView(schema,2,{isBodyParam: true});
+                                  var result = $('#d2e199_ontologyApiRunQueryPost_body');
+                                  result.empty();
+                                  result.append(view.render());
+                                });
+                                </script>
+                                <div id="d2e199_ontologyApiRunQueryPost_body"></div>
+                                </td>
+                                </tr>
+                            </table>
+
+
+
+                          <h2>Responses</h2>
+                            <h3> Status: 200 - Auto generated using Swagger Inspector </h3>
+
+                            <ul class="nav nav-tabs nav-tabs-examples" >
+                            </ul>
+
+                            <div class="tab-content" style='margin-bottom: 10px;'>
                             </div>
 
                         </article>

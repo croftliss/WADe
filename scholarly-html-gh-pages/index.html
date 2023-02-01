@@ -80,15 +80,18 @@
             </p>
             <p>
                 <h3>Frontend</h3>
-                The front end representing our catalogue of coins will be built using Angular. 
+                The front end representing our catalogue of coins is built using Angular. 
             </p>
             <p>
                 <h3>Backend</h3>
-                The back end includes:
+                The back end includes CryKAPI and CryKSemanticAPI, both written in Python using, and deployed using Flask:
                 <ul>
-                    <li>Main (Cryk) Api and Semantic Api, both will be written in Python using Flask.</li>
-                    <li>Ontology Query Service which will use the library rdflib in order to work with RDF and SPARQL queries.</li>
-                    <li>A wrapper around SPARQL service, sqparqlwrapper, to execute our queries.</li>
+                    <li>
+                        CryKAPI utilises multiple services (CryKDatabase, CoinGECKOService and MLService). CryKDatabase utilises pymongo to ensure communication with the chosen database provider. The communication is done using JSON format for both calls and responses, moreover the responses from the MongoDB are transformed into specific models that can be easily converted into JSONs.
+                        CoinGECKOService was used to further filter the coins which are exposed via the endpoints for SemanticAPI, but its main purpose it is to provide real-time data for specific coins (which are still alive), and to also provide historic data (up to 5 days). We chose to use CoinGECKO because its API is free-to-use, however we are still limited in regards to how many calls we can perform per minute.
+                        CryK also offers a prediction via its MLService whether someone should invest into a specific coin (DISCLAIMER: do not invest using our model's predictions).
+                    </li>
+                    <li>CryKSemanticAPI utilises Ontology Query Service which uses the library rdflib in order to work with RDF and SPARQL queries. CryK handles queries on the DOACC dataset via the query system provided by rdflib or on the JSON-LD via its known properties. The JSON-LD was obtained by converting the DOACC dataset which was provided in the N-Tiples format. JSON-LD provided easier acces and better control over the dataset.</li>
                 </ul>
             </p>  
     </section>
@@ -104,7 +107,9 @@
         <p>The Cryptocurrency class will be used with the data received from DOACC in order to populate the fields for each cryptocurrency available in our project.</p>
         <p>The Portfolio class is used to keep track of a user's coin portfolio, including the different types of coins they own and the number of each type.</p>
         <p>The Profile class can be used to store and manage information about a user's personal profile, including their contact information, location, and personal details. This information can be used by other classes or applications to personalize the user experience and provide relevant content.</p>
-        <p>The User class is used in registration and login processes, where a user is required to provide their email address and password to create an account or access their existing account. The email and password combination is verified against a database to ensure the user is authorized to access the system. 
+        <p>The User class is used in registration and login processes, where a user is required to provide their email address and password to create an account or access their existing account. The email and password combination is verified against a database to ensure the user is authorized to access the system.</p>
+        <p>
+            All of the above classes can be easily exported to JSON format.
         </p>
         </section>
         <section id = "external data">
@@ -119,7 +124,7 @@
             make it more informative for our users. </p>
         <h4>DOACC data</h4>
         <p>The DOACC is a database of information regarding altcoins, which are cryptocurrencies other than Bitcoin. This database includes facts such as the name, trading symbol, total number of coins, target time for blocks, hashing algorithm used, date of launch, and URL for the source code repository.
-            We have integrated in our project the dataset that they provide, which is in n-triple format, in order to offer various information about the altcoins that are also available in the CoinGecko API.
+            We have integrated in our project the dataset that they provide, which was in N-Triple format, and converted into JSON-LD, in order to offer various information about the altcoins that are also available in the CoinGecko API.
         </p>
         </section>
     </section>
@@ -132,7 +137,7 @@
         <section id="diagram">
             <h3>General diagram</h3>
             <p>
-                The application follows a very simple architecture, from a frontend client, the actions done by the user call different endpoints in 2 APIs, one with a more general purpose (generate data for visualizations based on SPARQL queries), and the other one, a semantic API that is more of a wrapper for SPARQL that has a bunch of queries ready to be used on our onthology obtained from <a href="https://doacc.github.io/">DOACC</a>.
+                The application follows a very simple architecture, from a frontend client, the actions done by the user call different endpoints in 2 APIs, one with a more general purpose, and the other one, a semantic API that that utilises a wrapper for SPARQL that has a queries ready to be used on our onthology obtained from <a href="https://doacc.github.io/">DOACC</a>.
             </p>
             <img class="image" src="images/Architecture.png" width="660" height="726">
         </section>
@@ -143,7 +148,8 @@
                 the account information is stored after applying a salt and hash upon them. <img src="images/Login_step.png"/></p>
             <h4>General</h4>
             <p>Upon successful login, the user's session is maintained using JSON Web Tokens (JWT). The following actions are available for the user:
-                <ul><li>Updating their personal profile.</li>
+                <ul>
+                    <li>Updating their personal profile.</li>
                 <li>Managing their wallet to monitor portfolio performance.</li>
                 <li>Accessing cryptocurrency information, such as price, symbol, and protocol.</li>
                 <li>Performing SPARQL queries on available RDF data.</li>
@@ -153,6 +159,13 @@
     </section>
     <section id="model">
         <h2>Cryptocurrency buying recommender</h2>
+        The model was created using the SequentialModel from <a href="https://www.tensorflow.org/">Tensorflow</a>. The model features the following layers:
+        <ol>
+            <li>The first layer adds a new axis to the input that will be used to obtain the predictions;</li>
+            <li>The second layer creates a convolutional kernel with the input layer over the spatial dimension to produce a tensor with the given dimensions (in our case 128 filters) and a kernel of size 5x5</li>
+            <li>The third layer creates a fully dense layer that would </li>
+        </ol>
+        <img class="image" src="images/ML_model.png" width="600" height="250">
     </section>
     <section id="ontology">
         <h2>Ontology</h2>
