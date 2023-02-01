@@ -1,0 +1,135 @@
+<div *ngIf="isDataAvailable" class="container emp-coin">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="coin-img">
+                <img [src]=selectedCoin.image />
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="coin-head">
+                <h2>{{selectedCoin.name}}</h2>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+        </div>
+        <div class="coin-details col-md-8">
+            <div class="row">
+                <div class="col-md-4">
+                    <label>Symbol</label>
+                </div>
+                <div class="col-md-8">
+                    <p>{{selectedCoin.symbol}}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <label>Date Founded</label>
+                </div>
+                <div class="col-md-8">
+                    <p>{{selectedCoin.date_founded}}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <label>Total Coins</label>
+                </div>
+                <div class="col-md-8">
+                    <p>{{selectedCoin.total_coins}}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <label>Description</label>
+                </div>
+                <div class="col-md-8">
+                    <p>{{selectedCoin.description}}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <label>Block Time</label>
+                </div>
+                <div class="col-md-8">
+                    <p>{{selectedCoin.block_time}}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <label>Incept</label>
+                </div>
+                <div class="col-md-8">
+                    <p>{{selectedCoin.incept}}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <label>Premine</label>
+                </div>
+                <div class="col-md-8">
+                    <p>{{selectedCoin.premine}}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <label>Retarget Time</label>
+                </div>
+                <div class="col-md-8">
+                    <p>{{selectedCoin.retarget_time}}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <label>Proof of stake</label>
+                </div>
+                <div class="col-md-8">
+                    <a [href]="selectedCoin.proof_of_stake">{{selectedCoin.proof_of_stake}}</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <label>Proof of work</label>
+                </div>
+                <div class="col-md-8">
+                    <a [href]="selectedCoin.proof_of_work">{{selectedCoin.proof_of_work}}</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <label>Protection scheme</label>
+                </div>
+                <div class="col-md-8">
+                    <a [href]="selectedCoin.protection_scheme">{{selectedCoin.protection_scheme}}</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <label>Protocol</label>
+                </div>
+                <div class="col-md-8">
+                    <a [href]="selectedCoin.protocol">{{selectedCoin.protocol}}</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <label>Source</label>
+                </div>
+                <div class="col-md-8">
+                    <a [href]="selectedCoin.source">{{selectedCoin.source}}</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <label>Website</label>
+                </div>
+                <div class="col-md-8">
+                    <a [href]="selectedCoin.website">{{selectedCoin.website}}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button mat-raised-button 
+            color="primary" 
+            [routerLink]="['/cryk/cryptocurrencies']">Back</button>
+</div>

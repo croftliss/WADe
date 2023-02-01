@@ -1,0 +1,6 @@
+<ng-container [ngSwitch]="isUserRegistered">
+    <app-login *ngSwitchCase="false"
+                (switchPage)="switchPage()"></app-login>
+    <app-register *ngSwitchCase="true"
+                  (switchPage)="switchPage()"></app-register>
+</ng-container>

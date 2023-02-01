@@ -1,0 +1,24 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar><a [routerLink]="'/cryk'">Menu</a></mat-toolbar>
+    <mat-nav-list>
+      <a *ngFor="let item of menuItems" 
+          [routerLink]="'/cryk/'+item"
+          mat-list-item> {{item | titlecase}} </a>
+      <button mat-stroked-button color="primary"
+          (click)="logOut()">
+        Logout
+      </button>
+    </mat-nav-list>
+    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <span>cryk</span>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,28 @@
+<div class="main-content">
+    <form [formGroup]="form">
+        <div class="row">
+            <mat-label>Write your sparql query...</mat-label>
+            <textarea matInput rows="10" formControlName="query"></textarea>
+        </div>
+        <div class="row">
+            <button mat-raised-button color="primary" type="submit" (click)="onSubmit()" [disabled]="!form.valid">
+                Submit
+            </button>
+        </div>
+    </form>
+    <div *ngIf="isDataAvailable" class="row">
+        <table>
+            <tr>
+                <th *ngFor="let header of displayedColumns;">{{header}}</th>
+            </tr>
+            <tr></tr>
+            <tr *ngFor="let item of sparqlResults; let i = index"
+                style="padding-bottom: 20px">
+                <td *ngFor="let item2 of displayedColumns; let j = index"
+                    style="padding-right: 20px">
+                    {{getArrayByColumnName(displayedColumns[j])[i]?.value}}
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

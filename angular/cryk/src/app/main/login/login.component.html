@@ -1,0 +1,50 @@
+<div class="limiter">
+	<div class="container-login">
+		<div class="wrap-login">
+			<form class="login-form validate-form"
+                  [formGroup]="form" >
+				<span class="login-form-title p-b-43">
+					Login to continue
+				</span>
+				<div class="wrap-input validate-input" 
+                     data-validate = "Valid email is required: ex@abc.xyz">
+					<input class="input" 
+                           type="text" 
+                           name="email"
+						   placeholder="Email"
+                           formControlName="email">
+				</div>
+				<div class="wrap-input validate-input" 
+                     data-validate="Password is required">
+					<input class="input" 
+                           type="password" 
+                           name="password"
+						   placeholder="Password"
+                           formControlName="password">
+				</div>
+				<div class="container-login-form-btn">
+					<button class="login-form-btn"
+                            (click)="onLogin()">
+						Login
+					</button>
+				</div>
+				<div class="text-center p-t-46 p-b-20">
+					<span class="txt2">
+						or sign up using
+					</span>
+				</div>
+				<div class="login-form-social flex-c-m">
+					<button id="buttonGoogle"></button>
+				</div>
+				<div class="container-form-btn-second">
+					<button class="form-btn-second"
+                            (click)="onSwitchToRegister()">
+						Register
+					</button>
+				</div>
+			</form>
+			<div class="login-more">
+			</div>
+		</div>
+	</div>
+</div>

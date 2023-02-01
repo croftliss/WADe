@@ -1,0 +1,41 @@
+<h4>Choose first coin:</h4>
+<select name="my-select" [(ngModel)]="firstCoinName" (change)="selectFirstChange()">
+    <option [value]="name" *ngFor="let name of coinNames">
+        {{name | titlecase}}
+    </option>
+</select>
+<div></div>
+<ngx-charts-line-chart *ngIf="isDataAvailableForFirstCoin"
+  [view]="[700, 300]"
+  [legend]="true"
+  [legendTitle]="'absdadwa'"
+  [showXAxisLabel]="true"
+  [showYAxisLabel]="true"
+  [xAxis]="true"
+  [yAxis]="true"
+  [xAxisLabel]="'Date'"
+  [yAxisLabel]="'Value'"
+  [results]="multiFirst"
+  >
+</ngx-charts-line-chart>
+
+<div></div>
+<h4>Choose second coin:</h4>
+<select name="my-select" [(ngModel)]="secondCoinName" (change)="selectSecondChange()">
+    <option [value]="name" *ngFor="let name of coinNames">
+        {{name | titlecase}}
+    </option>
+</select>
+<ngx-charts-line-chart *ngIf="isDataAvailableForSecondCoin"
+    [view]="[700, 300]"
+    [legend]="true"
+    [legendTitle]="'absdadwa'"
+    [showXAxisLabel]="true"
+    [showYAxisLabel]="true"
+    [xAxis]="true"
+    [yAxis]="true"
+    [xAxisLabel]="'Date'"
+    [yAxisLabel]="'Value'"
+    [results]="multiSecond"
+  >
+</ngx-charts-line-chart>

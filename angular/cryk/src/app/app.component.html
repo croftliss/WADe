@@ -1,0 +1,6 @@
+<div *ngIf="authService.isAuthenticated()">
+  <app-nav></app-nav>
+</div>
+<div *ngIf="!authService.isAuthenticated()">
+  <app-main></app-main>
+</div>
