@@ -176,7 +176,15 @@
     </section>
     <section id = "knowledge">
         <h2>Knowledge usage</h2>
-        <p> lessgo</p>
+        <p> The knowledge model utilized in our project is derived from the DOACC project and stored in N-TRIPLES format. This data was deemed comprehensive enough for our purposes and covered all the information necessary for us to build upon it. 
+            To make the data more readable and manageable, we converted it from N-TRIPLES to json-ld, which also met the requirements of the project. The json-ld data includes details such as the protocol used by the altcoin, its preferred label, website, and more. 
+            However, some coins lacked complete information, so we had to be flexible in our data retrieval and parsing process. In addition to the DOACC project, we also made use of other knowledge bases such as SKOS and DC to retrieve descriptions 
+            and preferred labels of the coins.
+            Our semantic API provides various endpoints that allow us to retrieve specific data based on our needs, such as getting coins based on their protocol (PoW or PoS), retrieving a filtered list of coins based on their name, or getting the image associated with 
+            a single coin. All this information is integrated into our web application and can be accessed through the Cryptocurrencies tab. <img src="images/Cryptocurrencies_tab.png"/> To make data more accessible, we also expose a sparql endpoint which can be used 
+            within the project through the Sparql tab. Below, a brief example of a request and response for an endpoint call: <img src="images/Cryptocurrency_by_name.png"/>
+        </p>
+        <p>Valid html + RDFa generation: <img src="images/valid_rdfa.png" width="1100" length="1000"/> Valid jsonLD generation: <img src="images/valid_jsonld.png"/></p>
     </section>
     <section id="api">
         <h2>APIs</h2>
