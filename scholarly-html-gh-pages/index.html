@@ -80,7 +80,12 @@
             </p>
             <p>
                 <h3>Frontend</h3>
-                The front end representing our catalogue of coins is built using Angular. 
+                The front end representing our catalogue of coins is built using Angular v13.2.5. We have various components created for our application including: 
+        <ul>
+            <li>components for sign in: login, register, logout, main;</li>
+            <li>components for navigation and functionalities: navigation, profile, crypto currencies, crypto currency details, sparql, home, visualization-of-data, wallet</li>
+        </ul>
+            The structure of the project is based on 3 main components: app, main and navigation. This hierarchy makes the application and the needed functionalities easier to implement for us and easier to use by the user. Each component has it's own service which is used in the communication with the backend APIs, CrykAPI and SemanticAPI and they are protected through an authentication guard established in the routing configuration. The needed imports and providers are exposed in the module files and the logic of each unit is stored in component classes and extensions. For styling the pages we used the packages ng-material and bootstrap and for the charts we used the ngx-charts package.
             </p>
             <p>
                 <h3>Backend</h3>
